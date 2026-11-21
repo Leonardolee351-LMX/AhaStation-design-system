@@ -2632,3 +2632,40 @@
   animation: none;
   pointer-events: none;
 }
+
+.docs-ip-status {
+  display: inline-flex;
+  align-items: center;
+  margin-top: var(--aha-space-12);
+  padding: 4px 10px;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-color-warning-soft);
+  color: var(--aha-color-warning);
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-caption-size);
+  font-weight: 600;
+}
+
+.docs-ip-figure {
+  margin: 0;
+}
+
+.docs-ip-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--aha-radius-md);
+  background: var(--aha-canvas);
+}
+
+.docs-ip-figure figcaption {
+  margin-top: var(--aha-space-8);
+  color: var(--aha-muted);
+  font-family: var(--aha-caption-family);
+  font-size: var(--aha-caption-size);
+}
+
+.docs-ip-stack {
+  display: grid;
+  gap: var(--aha-space-24);
+}

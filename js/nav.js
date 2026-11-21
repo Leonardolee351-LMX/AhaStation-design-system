@@ -84,7 +84,8 @@
         { href: "foundations/radius.html", key: "foundations/radius.html", name: "圆角" },
         { href: "foundations/elevation.html", key: "foundations/elevation.html", name: "层级与光效" },
         { href: "foundations/icons.html", key: "foundations/icons.html", name: "图标" },
-        { href: "foundations/motion.html", key: "foundations/motion.html", name: "动效" }
+        { href: "foundations/motion.html", key: "foundations/motion.html", name: "动效" },
+        { href: "foundations/ip.html", key: "foundations/ip.html", name: "IP设计（施工中）" }
       ]
     },
     {

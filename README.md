@@ -6,21 +6,15 @@
 
 ## 如何打开
 
-在本目录启动一个本地静态服务（推荐）：
+- **Windows：** 双击 `start.cmd`。脚本会在 `5174` 端口打开本站，并在窗口里打印局域网地址。
+- **iPhone / iPad：** 先在 Windows 上双击 `start.cmd`，手机和电脑连同一个 Wi-Fi，再用 Safari 打开窗口里打印的 `http://192.168.…:5174/`。iOS 不能直接运行 `start.cmd`。页面已按手机宽度收起侧栏，点左上角菜单即可切换「基础 / IP设计（施工中）」等页面。
+- 只在这台 Windows 上预览、不给手机看时，也可以直接双击 `index.html`。Google Fonts 需要联网；字体未载入时会回退到苹方、雅黑或 system-ui。
+
+也可以手动启动：
 
 ```bash
 python -m http.server 5174
 ```
-
-或在已安装 Node 的机器上：
-
-```bash
-npx --yes serve -l 5174
-```
-
-然后在浏览器打开 [http://localhost:5174/](http://localhost:5174/)。
-
-也可以直接用浏览器打开 `index.html`（`file://`）。相对路径可以工作；Google Fonts 需要联网。若字体未载入，系统会回退到苹方、雅黑或 system-ui。
 
 ## 如何改 token
 
@@ -43,7 +37,7 @@ npx --yes serve -l 5174
 
 ```
 index.html                 概述（光场英雄区与组件一览）
-foundations/               基础：颜色、字体、间距、圆角、层级与光效（阴影）、图标、动效原则
+foundations/               基础：颜色、字体、间距、圆角、层级与光效（阴影）、图标、动效原则、IP设计（施工中）
 components/                原子与组合组件（含动效编排：弹出、拖拽、消失、页面切换）
 components/index.html      组件总览画廊
 patterns/                  应用框架、上传与确认
@@ -64,7 +58,7 @@ assets/                    站点标记
 
 - 品牌主语言是蓝色与光。主色是 `#2563EB`（`--aha-color-primary`）。橙色只用于警告或次要强调，绝不用作主按钮。
 - 标题使用 Plus Jakarta Sans，正文、标签与界面使用 Inter。两者都通过 Google Fonts 加载。
-- IP 形象目前是发光软团占位（两只椭圆眼睛），页面上标为「占位」，待正式形象替换。
+- IP 形象参考在「基础 / IP设计（施工中）」。方案 1 是协作智能体总览，方案 2 是 Puzzle Agent。动画资产与动作库仍在制作中。组件页里的发光软团仍是占位。
 - 演示文案围绕项目室、会议、看板、上传与文件，不使用虚构的品牌口号或社交证明。
 
 ## 文档语言与无障碍
