@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>动效编排：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 动效编排</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">动效编排 <span class="docs-en">Motion patterns</span></h1>
+        <p class="docs-lede">把时长、曲线和阴影接到真实的组件行为上。动效要干净利落：弹出和消失走得短，页面用翻页而不是两层叠在一起，拖拽也要遵守自动布局。原则和 token 在 <a href="../foundations/motion.html">动效基础</a> 与 <a href="../foundations/elevation.html">层级与光效</a>。</p>
+
+        <section class="docs-section" id="enter">
+          <h2 class="docs-h2">弹出</h2>
+          <p class="docs-prose">进入用 180ms 的减速曲线。只轻微上移并放大到原位，阴影同时抬到悬停层级，不要弹得太远。</p>
+          <div class="docs-choreo" data-demo="enter">
+            <div class="docs-choreo-toolbar">
+              <button type="button" class="aha-btn aha-btn--primary aha-btn--pill" data-play="enter"><span class="aha-btn-label">打开会议卡片</span></button>
+              <button type="button" class="aha-btn aha-btn--ghost aha-btn--pill" data-reset="enter"><span class="aha-btn-label">收回</span></button>
+            </div>
+            <div class="docs-choreo-stage">
+              <article class="aha-card docs-pop-card">
+                <p class="docs-type-caption">今天 16:20</p>
+                <h3 class="aha-card-title">项目室周会</h3>
+                <p class="aha-card-body">把本周待办和参考文件放进同一张卡片，确认后同步到看板。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="drag">
+          <h2 class="docs-h2">拖拽</h2>
+          <p class="docs-prose">按下后卡片提起，影子换成 <code class="docs-token" data-copy="--aha-elev-drag" title="点击复制">--aha-elev-drag</code>。松手后必须落回某一列的自动布局位置，列里的其他卡片会让位；不能停在网格外的任意坐标。</p>
+          <div class="docs-choreo" data-demo="drag">
+            <div class="docs-choreo-toolbar">
+              <p class="docs-note">在两列之间拖动卡片，看它如何插入并对齐。</p>
+              <button type="button" class="aha-btn aha-btn--ghost aha-btn--pill" data-reset="drag"><span class="aha-btn-label">重置</span></button>
+            </div>
+            <div class="docs-choreo-stage docs-drag-board">
+              <section class="docs-drag-lane" aria-label="待整理">
+                <h3 class="docs-drag-lane-title">待整理</h3>
+                <div class="docs-drag-list" data-lane="inbox">
+                  <article class="aha-card docs-drag-card" data-drag-card>
+                    <span class="docs-drag-handle" aria-hidden="true"><span data-icon="more"></span></span>
+                    <h3 class="aha-card-title">会议纪要.pdf</h3>
+                    <p class="aha-card-body">2.1 MB · 今天上传</p>
+                  </article>
+                  <article class="aha-card docs-drag-card" data-drag-card>
+                    <span class="docs-drag-handle" aria-hidden="true"><span data-icon="more"></span></span>
+                    <h3 class="aha-card-title">视觉升级参考</h3>
+                    <p class="aha-card-body">12 个文件</p>
+                  </article>
+                  <article class="aha-card docs-drag-card" data-drag-card>
+                    <span class="docs-drag-handle" aria-hidden="true"><span data-icon="more"></span></span>
+                    <h3 class="aha-card-title">待同步看板</h3>
+                    <p class="aha-card-body">3 条待办</p>
+                  </article>
+                  <p class="docs-drag-empty" hidden>这一列是空的</p>
+                </div>
+              </section>
+              <section class="docs-drag-lane" aria-label="看板">
+                <h3 class="docs-drag-lane-title">看板</h3>
+                <div class="docs-drag-list" data-lane="board">
+                  <p class="docs-drag-empty">把卡片拖到这里</p>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="exit">
+          <h2 class="docs-h2">消失</h2>
+          <p class="docs-prose">离开比进入更干脆：120ms、加速曲线，轻微下移后收掉，阴影回到 0。点右上角关闭，或用「再打开」把卡片请回来。</p>
+          <div class="docs-choreo" data-demo="exit">
+            <div class="docs-choreo-toolbar">
+              <button type="button" class="aha-btn aha-btn--secondary aha-btn--pill" data-play="exit"><span class="aha-btn-label">再打开</span></button>
+            </div>
+            <div class="docs-choreo-stage">
+              <article class="aha-card docs-exit-card is-in">
+                <button type="button" class="aha-btn aha-btn--icon aha-btn--ghost aha-btn--sm docs-exit-close" data-dismiss aria-label="关闭卡片"><span data-icon="close"></span></button>
+                <p class="docs-type-caption">确认</p>
+                <h3 class="aha-card-title">要从项目室移除这份文件吗？</h3>
+                <p class="aha-card-body">会议纪要.pdf 只会离开当前项目室，源文件还在。</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="sequence">
+          <h2 class="docs-h2">弹出 · 拖拽 · 消失</h2>
+          <p class="docs-prose">把三段接成一次编排：卡片出现，被拿起移到看板，再自行收走。用来检查时长是否衔接，而不是给产品加自动表演。</p>
+          <div class="docs-choreo" data-demo="sequence">
+            <div class="docs-choreo-toolbar">
+              <button type="button" class="aha-btn aha-btn--primary aha-btn--pill" data-play="sequence"><span class="aha-btn-label">播放这段</span></button>
+            </div>
+            <div class="docs-choreo-stage docs-seq-board">
+              <div class="docs-seq-spot" data-seq-origin>
+                <span class="docs-type-caption">项目文件</span>
+              </div>
+              <div class="docs-seq-spot docs-seq-spot--drop" data-seq-drop>
+                <span class="docs-type-caption">看板</span>
+              </div>
+              <article class="aha-card docs-seq-card" data-seq-card>
+                <h3 class="aha-card-title">同步待办</h3>
+                <p class="aha-card-body">3 条来自今日会议</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="page">
+          <h2 class="docs-h2">页面切换</h2>
+          <p class="docs-prose">翻页，而不是两层叠在一起淡入淡出。前进时整页向左翻出，新页从右侧整页进来，时长 280ms，过程中看不到两页文字叠在一起。返回则方向相反。点一条会议进入详情，再点返回。</p>
+          <div class="docs-choreo" data-demo="page">
+            <div class="docs-page-phone">
+              <div class="docs-page-chrome">
+                <span class="docs-page-dot" aria-hidden="true"></span>
+                <span class="docs-type-label">项目室</span>
+              </div>
+              <div class="docs-page-body" data-page-frame data-dir="forward">
+                <div class="docs-page-view is-active" data-view="list">
+                  <h3 class="aha-card-title">本周会议</h3>
+                  <p class="docs-type-caption" style="margin-bottom: var(--aha-space-12);">3 场 · 点击进入详情</p>
+                  <button type="button" class="docs-page-row" data-go="detail-1">
+                    <span>
+                      <strong>项目室周会</strong>
+                      <span class="docs-type-caption">今天 16:20 · 8 人</span>
+                    </span>
+                    <span data-icon="chevronRight"></span>
+                  </button>
+                  <button type="button" class="docs-page-row" data-go="detail-2">
+                    <span>
+                      <strong>视觉升级对齐</strong>
+                      <span class="docs-type-caption">周三 11:00 · 5 人</span>
+                    </span>
+                    <span data-icon="chevronRight"></span>
+                  </button>
+                  <button type="button" class="docs-page-row" data-go="detail-3">
+                    <span>
+                      <strong>看板梳理</strong>
+                      <span class="docs-type-caption">周五 14:30 · 4 人</span>
+                    </span>
+                    <span data-icon="chevronRight"></span>
+                  </button>
+                </div>
+                <div class="docs-page-view" data-view="detail-1">
+                  <button type="button" class="docs-page-back" data-go="list" data-dir="back"><span data-icon="chevronLeft"></span>本周会议</button>
+                  <p class="docs-type-caption">今天 16:20</p>
+                  <h3 class="aha-card-title">项目室周会</h3>
+                  <p class="aha-card-body">确认本周上传的纪要，并把还没建的待办同步到看板。</p>
+                </div>
+                <div class="docs-page-view" data-view="detail-2">
+                  <button type="button" class="docs-page-back" data-go="list" data-dir="back"><span data-icon="chevronLeft"></span>本周会议</button>
+                  <p class="docs-type-caption">周三 11:00</p>
+                  <h3 class="aha-card-title">视觉升级对齐</h3>
+                  <p class="aha-card-body">对照光场与组件一览，决定卡片、阴影和动效的下一轮调整。</p>
+                </div>
+                <div class="docs-page-view" data-view="detail-3">
+                  <button type="button" class="docs-page-back" data-go="list" data-dir="back"><span data-icon="chevronLeft"></span>本周会议</button>
+                  <p class="docs-type-caption">周五 14:30</p>
+                  <h3 class="aha-card-title">看板梳理</h3>
+                  <p class="aha-card-body">把已完成的待办归档，只留下下一迭代还要跟的条目。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

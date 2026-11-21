@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>圆角：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">基础 / 圆角</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">圆角 <span class="docs-en">Radius</span></h1>
+        <p class="docs-lede">圆角偏大、偏软。胶囊形留给主行动、芯片与头像；卡片用 lg 或 xl，避免过小的矩形感。</p>
+
+        <section class="docs-section">
+          <div class="docs-grid-3">
+            <div class="docs-radius-item" style="border-radius: var(--aha-radius-sm);">
+      <strong class="docs-type-label">sm</strong>
+      <span class="docs-type-caption">--aha-radius-sm，8px</span>
+      <span class="docs-type-caption">输入框、小标签</span>
+    </div>
+<div class="docs-radius-item" style="border-radius: var(--aha-radius-md);">
+      <strong class="docs-type-label">md</strong>
+      <span class="docs-type-caption">--aha-radius-md，14px</span>
+      <span class="docs-type-caption">按钮、选择器</span>
+    </div>
+<div class="docs-radius-item" style="border-radius: var(--aha-radius-lg);">
+      <strong class="docs-type-label">lg</strong>
+      <span class="docs-type-caption">--aha-radius-lg，20px</span>
+      <span class="docs-type-caption">卡片、对话框内区</span>
+    </div>
+<div class="docs-radius-item" style="border-radius: var(--aha-radius-xl);">
+      <strong class="docs-type-label">xl</strong>
+      <span class="docs-type-caption">--aha-radius-xl，28px</span>
+      <span class="docs-type-caption">大卡片、底栏、英雄区</span>
+    </div>
+<div class="docs-radius-item" style="border-radius: var(--aha-radius-pill);">
+      <strong class="docs-type-label">pill</strong>
+      <span class="docs-type-caption">--aha-radius-pill，999px</span>
+      <span class="docs-type-caption">主按钮、芯片、头像</span>
+    </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-radius-sm" title="点击复制">--aha-radius-sm</code><code class="docs-token" data-copy="--aha-radius-md" title="点击复制">--aha-radius-md</code><code class="docs-token" data-copy="--aha-radius-lg" title="点击复制">--aha-radius-lg</code><code class="docs-token" data-copy="--aha-radius-xl" title="点击复制">--aha-radius-xl</code><code class="docs-token" data-copy="--aha-radius-pill" title="点击复制">--aha-radius-pill</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

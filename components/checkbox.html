@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>复选框：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 复选框</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">复选框 <span class="docs-en">Checkbox</span></h1>
+        <p class="docs-lede">在一组可叠加的选项里做选择，例如给文件打多个标签。需要二态开关时请用 Switch。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">现场示例</h2>
+          <div class="docs-stage docs-stack">
+            <label class="aha-choice"><input type="checkbox" name="g" value='1' checked><span class="aha-check-ui"><span data-icon="check"></span></span>同步到看板</label>
+            <label class="aha-choice"><input type="checkbox" name="g" value='1'><span class="aha-check-ui"><span data-icon="check"></span></span>在会议开始前通知我</label>
+            <label class="aha-choice"><input type="checkbox" name="g" value='1' data-indeterminate><span class="aha-check-ui"><span data-icon="check"></span></span>部分选中的文件</label>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code><code class="docs-token" data-copy="--aha-radius-sm" title="点击复制">--aha-radius-sm</code></div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">状态矩阵</h2>
+          <table class="docs-matrix">
+            <thead><tr><th></th><th>未选</th><th>已选</th><th>中间态</th><th>禁用</th><th>已选禁用</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="docs-rowhead">复选框</td>
+                <td><label class="aha-choice"><input type="checkbox" name="g" value='1'><span class="aha-check-ui"><span data-icon="check"></span></span>放置你的文本</label></td>
+                <td><label class="aha-choice"><input type="checkbox" name="g" value='1' checked><span class="aha-check-ui"><span data-icon="check"></span></span>放置你的文本</label></td>
+                <td><label class="aha-choice"><input type="checkbox" name="g" value='1' data-indeterminate><span class="aha-check-ui"><span data-icon="check"></span></span>放置你的文本</label></td>
+                <td><label class="aha-choice"><input type="checkbox" name="g" value='1' disabled><span class="aha-check-ui"><span data-icon="check"></span></span>放置你的文本</label></td>
+                <td><label class="aha-choice"><input type="checkbox" name="g" value='1' checked disabled><span class="aha-check-ui"><span data-icon="check"></span></span>放置你的文本</label></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

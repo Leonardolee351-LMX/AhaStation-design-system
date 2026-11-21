@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>应用框架：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">模式 / 应用框架</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">应用框架 <span class="docs-en">App shell</span></h1>
+        <p class="docs-lede">AhaStation 桌面的基本结构：左侧窄轨与项目室列表，中间是工作区，右侧按需打开检查器。</p>
+
+        <section class="docs-section">
+          <div class="aha-shell">
+            <nav class="aha-navrail" aria-label="产品分区">
+              <button class="aha-navrail-btn is-active" type="button" aria-label="项目室"><span data-icon="folder"></span></button>
+              <button class="aha-navrail-btn" type="button" aria-label="会议"><span data-icon="calendar"></span></button>
+              <button class="aha-navrail-btn" type="button" aria-label="看板"><span data-icon="kanban"></span></button>
+              <button class="aha-navrail-btn" type="button" aria-label="消息"><span data-icon="message"></span></button>
+              <span style="flex:1"></span>
+              <button class="aha-navrail-btn" type="button" aria-label="设置"><span data-icon="settings"></span></button>
+            </nav>
+            <aside class="aha-appside">
+              <div class="aha-search">
+                <span data-icon="search"></span>
+                <input class="aha-input" type="search" placeholder="搜索项目室" aria-label="搜索项目室">
+              </div>
+              <p class="docs-type-label" style="padding: var(--aha-space-8) var(--aha-space-12) 0;">项目室</p>
+              <a class="aha-appside-item is-active" href="#"><span data-icon="folder"></span>视觉升级</a>
+              <a class="aha-appside-item" href="#"><span data-icon="folder"></span>本周会议</a>
+              <a class="aha-appside-item" href="#"><span data-icon="folder"></span>参考归档</a>
+            </aside>
+            <div class="aha-shell-main">
+              <header class="docs-row" style="justify-content:space-between;">
+                <div>
+                  <nav class="aha-crumb" aria-label="路径">
+                    <a href="#">项目室</a>
+                    <span data-icon="chevronRight"></span>
+                    <span aria-current="page">视觉升级</span>
+                  </nav>
+                  <h2 class="docs-h2" style="margin-top: var(--aha-space-8);">视觉升级</h2>
+                </div>
+                <button class="aha-btn aha-btn--primary aha-btn--sm aha-btn--pill" type="button"><span data-icon="upload"></span><span class="aha-btn-label">上传</span></button>
+              </header>
+              <div class="docs-row">
+                <button class="aha-chip is-selected" type="button" data-toggle aria-pressed="true">文件</button>
+                <button class="aha-chip" type="button" data-toggle aria-pressed="false">会议</button>
+                <button class="aha-chip" type="button" data-toggle aria-pressed="false">看板</button>
+              </div>
+              <div class="docs-grid-2">
+                <article class="aha-card aha-card--folder is-selected">
+                  <div class="aha-folder-tab"></div>
+                  <div class="aha-folder-body">
+                    <h3 class="aha-card-title">会议纪要</h3>
+                    <p class="aha-card-body">本周更新</p>
+                    <div class="aha-folder-peek" aria-hidden="true"><span></span><span style="width:60%"></span></div>
+                  </div>
+                </article>
+                <article class="aha-card aha-card--folder">
+                  <div class="aha-folder-tab"></div>
+                  <div class="aha-folder-body">
+                    <h3 class="aha-card-title">参考图</h3>
+                    <p class="aha-card-body">风格意向</p>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <aside class="aha-panel">
+              <p class="docs-type-label">检查器</p>
+              <h3 class="aha-card-title" style="margin-top: var(--aha-space-8);">会议纪要</h3>
+              <p class="aha-card-body">选中的文件夹。可以在这里重命名、移动或分享。</p>
+              <div class="docs-stack" style="margin-top: var(--aha-space-20);">
+                <button class="aha-btn aha-btn--primary aha-btn--sm aha-btn--pill" type="button"><span class="aha-btn-label">打开</span></button>
+                <button class="aha-btn aha-btn--secondary aha-btn--sm" type="button"><span data-icon="share"></span><span class="aha-btn-label">分享</span></button>
+              </div>
+            </aside>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-canvas" title="点击复制">--aha-canvas</code><code class="docs-token" data-copy="--aha-card" title="点击复制">--aha-card</code><code class="docs-token" data-copy="--aha-color-primary-soft" title="点击复制">--aha-color-primary-soft</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

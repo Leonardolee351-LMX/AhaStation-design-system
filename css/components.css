@@ -1,0 +1,1878 @@
+/* AhaStation components · consume semantic tokens only */
+
+/* -------------------------------------------------------------------------
+   Icon
+   ------------------------------------------------------------------------- */
+.aha-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+  display: inline-block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+  overflow: visible;
+}
+
+.aha-icon--sm {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+.aha-icon--md {
+  width: 20px;
+  height: 20px;
+}
+
+/* -------------------------------------------------------------------------
+   Link
+   ------------------------------------------------------------------------- */
+.aha-link {
+  color: var(--aha-color-primary);
+  text-decoration: none;
+  font-family: var(--aha-body-family);
+  border-radius: var(--aha-radius-sm);
+}
+
+.aha-link:hover {
+  color: var(--aha-color-primary-hover);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.aha-link:active {
+  color: var(--aha-color-primary-pressed);
+}
+
+.aha-link.is-disabled,
+.aha-link[aria-disabled="true"] {
+  color: var(--aha-muted);
+  pointer-events: none;
+  text-decoration: none;
+}
+
+/* -------------------------------------------------------------------------
+   Button
+   ------------------------------------------------------------------------- */
+.aha-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--aha-space-8);
+  height: var(--aha-button-height-md);
+  padding: var(--aha-button-pad-md);
+  border-radius: var(--aha-radius-md);
+  border: 1px solid transparent;
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-label-size);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  min-width: var(--aha-button-min);
+  position: relative;
+  transition:
+    background-color var(--aha-duration-fast) var(--aha-ease-standard),
+    color var(--aha-duration-fast) var(--aha-ease-standard),
+    border-color var(--aha-duration-fast) var(--aha-ease-standard),
+    box-shadow var(--aha-duration-fast) var(--aha-ease-standard),
+    opacity var(--aha-duration-fast) var(--aha-ease-standard),
+    transform var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.aha-btn .aha-icon {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+.aha-btn--sm {
+  height: var(--aha-button-height-sm);
+  padding: var(--aha-button-pad-sm);
+  font-size: 0.75rem;
+  border-radius: var(--aha-radius-sm);
+}
+
+.aha-btn--lg {
+  height: var(--aha-button-height-lg);
+  padding: var(--aha-button-pad-lg);
+  font-size: 0.9375rem;
+  border-radius: var(--aha-radius-lg);
+}
+
+.aha-btn--lg .aha-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.aha-btn--pill {
+  border-radius: var(--aha-radius-pill);
+}
+
+.aha-btn--icon {
+  width: var(--aha-button-height-md);
+  min-width: var(--aha-button-height-md);
+  padding: 0;
+}
+
+.aha-btn--icon.aha-btn--sm {
+  width: var(--aha-button-height-sm);
+}
+
+.aha-btn--icon.aha-btn--lg {
+  width: var(--aha-button-height-lg);
+}
+
+.aha-btn--primary {
+  background: var(--aha-color-primary);
+  color: var(--aha-color-on-primary);
+  box-shadow: 0 1px 2px rgba(var(--aha-blue-500-rgb), 0.25);
+}
+
+.aha-btn--primary:hover {
+  background: var(--aha-color-primary-hover);
+  box-shadow: var(--aha-glow);
+  transform: translateY(-1px);
+}
+
+.aha-btn--primary:active {
+  background: var(--aha-color-primary-pressed);
+  box-shadow: none;
+  transform: translateY(0);
+}
+
+.aha-btn--secondary {
+  background: var(--aha-card);
+  color: var(--aha-text-title);
+  border-color: var(--aha-line);
+}
+
+.aha-btn--secondary:hover {
+  background: var(--aha-color-primary-soft);
+  border-color: color-mix(in srgb, var(--aha-color-primary) 40%, var(--aha-line));
+  color: var(--aha-color-primary-hover);
+}
+
+.aha-btn--secondary:active {
+  background: var(--aha-blue-100);
+}
+
+.aha-btn--ghost {
+  background: transparent;
+  color: var(--aha-text-title);
+}
+
+.aha-btn--ghost:hover {
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary-hover);
+}
+
+.aha-btn--ghost:active {
+  background: var(--aha-blue-100);
+}
+
+.aha-btn--danger {
+  background: var(--aha-color-danger);
+  color: var(--aha-color-on-danger);
+}
+
+.aha-btn--danger:hover {
+  background: var(--aha-color-danger-hover);
+  transform: translateY(-1px);
+}
+
+.aha-btn--danger:active {
+  background: var(--aha-red-800);
+  transform: translateY(0);
+}
+
+.aha-btn--warning {
+  background: var(--aha-color-warning);
+  color: var(--aha-color-on-warning);
+}
+
+.aha-btn--warning:hover {
+  background: var(--aha-color-warning-hover);
+  color: var(--aha-color-on-primary);
+  transform: translateY(-1px);
+}
+
+.aha-btn--warning:active {
+  background: var(--aha-orange-800);
+  color: var(--aha-color-on-primary);
+  transform: translateY(0);
+}
+
+.aha-btn:disabled,
+.aha-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  pointer-events: none;
+}
+
+.aha-btn.is-loading {
+  pointer-events: none;
+}
+
+.aha-btn.is-loading .aha-btn-label {
+  opacity: 0;
+}
+
+.aha-btn.is-loading .aha-btn-spin {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 16px;
+  height: 16px;
+}
+
+/* FAB */
+.aha-fab {
+  width: var(--aha-fab-size);
+  height: var(--aha-fab-size);
+  padding: 0;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-color-primary);
+  color: var(--aha-color-on-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--aha-shadow-glow);
+  border: 0;
+  cursor: pointer;
+  transition:
+    background-color var(--aha-duration-fast) var(--aha-ease-standard),
+    box-shadow var(--aha-duration-fast) var(--aha-ease-standard),
+    transform var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.aha-fab:hover {
+  background: var(--aha-color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(var(--aha-blue-500-rgb), 0.4);
+}
+
+.aha-fab:active {
+  transform: translateY(0);
+  background: var(--aha-color-primary-pressed);
+}
+
+.aha-fab .aha-icon {
+  width: 24px;
+  height: 24px;
+  stroke-width: 1.75;
+}
+
+.aha-fab:disabled {
+  background: var(--aha-neutral-200);
+  color: var(--aha-muted);
+  box-shadow: none;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------
+   Fields: input, textarea, search
+   ------------------------------------------------------------------------- */
+.aha-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aha-space-8);
+  min-width: 0;
+}
+
+.aha-field-label {
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-label-size);
+  font-weight: var(--aha-label-weight);
+  line-height: var(--aha-label-leading);
+  color: var(--aha-text-label);
+}
+
+.aha-field-hint {
+  font-family: var(--aha-caption-family);
+  font-size: var(--aha-caption-size);
+  color: var(--aha-muted);
+}
+
+.aha-field-hint.is-error {
+  color: var(--aha-color-danger);
+}
+
+.aha-input,
+.aha-textarea,
+.aha-select-native {
+  width: 100%;
+  min-width: var(--aha-input-min);
+  max-width: 100%;
+  height: var(--aha-input-height);
+  padding: 0 var(--aha-space-16);
+  border: 1px solid var(--aha-line);
+  border-radius: var(--aha-radius-md);
+  background: var(--aha-card);
+  color: var(--aha-text-body);
+  font-family: var(--aha-body-family);
+  font-size: 0.9375rem;
+  box-shadow: 0 1px 1px rgba(var(--aha-ink-rgb), 0.03);
+  transition:
+    border-color var(--aha-duration-fast) var(--aha-ease-standard),
+    background-color var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.aha-input::placeholder,
+.aha-textarea::placeholder {
+  color: var(--aha-muted);
+  opacity: 1;
+}
+
+.aha-input:hover,
+.aha-textarea:hover,
+.aha-select-native:hover {
+  border-color: color-mix(in srgb, var(--aha-color-primary) 35%, var(--aha-line));
+}
+
+.aha-input:focus,
+.aha-textarea:focus,
+.aha-select-native:focus {
+  border-color: var(--aha-color-primary);
+  box-shadow: var(--aha-ring);
+  outline: none;
+}
+
+.aha-input:focus-visible,
+.aha-textarea:focus-visible,
+.aha-select-native:focus-visible {
+  outline: none;
+  box-shadow: var(--aha-ring);
+  border-color: var(--aha-color-primary);
+}
+
+.aha-input:disabled,
+.aha-textarea:disabled,
+.aha-select-native:disabled {
+  background: var(--aha-neutral-100);
+  color: var(--aha-muted);
+  cursor: not-allowed;
+}
+
+.aha-input.is-error,
+.aha-textarea.is-error {
+  border-color: var(--aha-color-danger);
+}
+
+.aha-input.is-error:focus,
+.aha-textarea.is-error:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--aha-color-danger) 25%, transparent);
+}
+
+.aha-textarea {
+  height: auto;
+  min-height: 96px;
+  padding: var(--aha-space-12) var(--aha-space-16);
+  resize: vertical;
+  line-height: var(--aha-body-leading);
+}
+
+.aha-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.aha-search .aha-icon {
+  position: absolute;
+  left: var(--aha-space-12);
+  width: 16px;
+  height: 16px;
+  color: var(--aha-muted);
+  pointer-events: none;
+}
+
+.aha-search .aha-input {
+  padding-left: var(--aha-space-40);
+  border-radius: var(--aha-radius-pill);
+}
+
+/* -------------------------------------------------------------------------
+   Custom select
+   ------------------------------------------------------------------------- */
+.aha-select {
+  position: relative;
+  min-width: 0;
+}
+
+.aha-select-trigger {
+  width: 100%;
+  height: var(--aha-input-height);
+  padding: 0 var(--aha-space-40) 0 var(--aha-space-16);
+  border: 1px solid var(--aha-line);
+  border-radius: var(--aha-radius-md);
+  background: var(--aha-card);
+  color: var(--aha-text-body);
+  font-family: var(--aha-body-family);
+  font-size: 0.9375rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition:
+    border-color var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.aha-select-trigger:hover {
+  border-color: color-mix(in srgb, var(--aha-color-primary) 35%, var(--aha-line));
+}
+
+.aha-select.is-open .aha-select-trigger,
+.aha-select-trigger:focus-visible {
+  border-color: var(--aha-color-primary);
+  box-shadow: var(--aha-ring);
+  outline: none;
+}
+
+.aha-select-trigger .aha-icon {
+  position: absolute;
+  right: var(--aha-space-12);
+  width: 16px;
+  height: 16px;
+  color: var(--aha-muted);
+  transition: transform var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.aha-select.is-open .aha-select-trigger .aha-icon {
+  transform: rotate(180deg);
+}
+
+.aha-select-menu {
+  position: absolute;
+  z-index: var(--aha-z-dropdown);
+  left: 0;
+  right: 0;
+  top: calc(100% + var(--aha-space-8));
+  margin: 0;
+  padding: var(--aha-space-8);
+  background: var(--aha-card);
+  border: 1px solid var(--aha-line-soft);
+  border-radius: var(--aha-radius-md);
+  box-shadow: var(--aha-shadow-3);
+  display: none;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.aha-select.is-open .aha-select-menu {
+  display: block;
+}
+
+.aha-select-option {
+  width: 100%;
+  text-align: left;
+  padding: var(--aha-space-8) var(--aha-space-12);
+  border-radius: var(--aha-radius-sm);
+  font-family: var(--aha-body-family);
+  font-size: 0.9375rem;
+  color: var(--aha-text-body);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--aha-space-8);
+}
+
+.aha-select-option:hover,
+.aha-select-option:focus-visible {
+  background: var(--aha-color-primary-soft);
+  outline: none;
+}
+
+.aha-select-option.is-selected {
+  color: var(--aha-color-primary);
+  font-weight: 600;
+}
+
+.aha-select-trigger:disabled {
+  background: var(--aha-neutral-100);
+  color: var(--aha-muted);
+  cursor: not-allowed;
+}
+
+/* -------------------------------------------------------------------------
+   Checkbox, radio, switch
+   ------------------------------------------------------------------------- */
+.aha-choice {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aha-space-8);
+  font-family: var(--aha-body-family);
+  font-size: 0.9375rem;
+  color: var(--aha-text-body);
+  cursor: pointer;
+  user-select: none;
+}
+
+.aha-choice input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.aha-check-ui,
+.aha-radio-ui {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  border: 1.5px solid var(--aha-line);
+  background: var(--aha-card);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--aha-color-on-primary);
+  transition:
+    background-color var(--aha-duration-fast) var(--aha-ease-standard),
+    border-color var(--aha-duration-fast) var(--aha-ease-standard),
+    box-shadow var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.aha-check-ui {
+  border-radius: 5px;
+}
+
+.aha-radio-ui {
+  border-radius: var(--aha-radius-pill);
+}
+
+.aha-check-ui .aha-icon,
+.aha-radio-ui .aha-icon {
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+  stroke-width: 2.5;
+}
+
+.aha-choice:hover .aha-check-ui,
+.aha-choice:hover .aha-radio-ui {
+  border-color: var(--aha-color-primary);
+}
+
+.aha-choice input:checked + .aha-check-ui,
+.aha-choice input:checked + .aha-radio-ui {
+  background: var(--aha-color-primary);
+  border-color: var(--aha-color-primary);
+}
+
+.aha-choice input:checked + .aha-check-ui .aha-icon,
+.aha-choice input:checked + .aha-radio-ui .aha-icon {
+  opacity: 1;
+}
+
+.aha-choice input:indeterminate + .aha-check-ui {
+  background: var(--aha-color-primary);
+  border-color: var(--aha-color-primary);
+}
+
+.aha-choice input:focus-visible + .aha-check-ui,
+.aha-choice input:focus-visible + .aha-radio-ui {
+  outline: var(--aha-focus-outline);
+  outline-offset: var(--aha-focus-offset);
+}
+
+.aha-choice input:disabled + .aha-check-ui,
+.aha-choice input:disabled + .aha-radio-ui {
+  background: var(--aha-neutral-100);
+  border-color: var(--aha-line);
+}
+
+.aha-choice:has(input:disabled) {
+  color: var(--aha-muted);
+  cursor: not-allowed;
+}
+
+/* radio inner dot */
+.aha-radio-ui::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-color-on-primary);
+  opacity: 0;
+  transform: scale(0.6);
+  transition:
+    opacity var(--aha-duration-fast) var(--aha-ease-standard),
+    transform var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.aha-choice input:checked + .aha-radio-ui::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Switch */
+.aha-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aha-space-8);
+  cursor: pointer;
+  font-family: var(--aha-body-family);
+  font-size: 0.9375rem;
+  color: var(--aha-text-body);
+}
+
+.aha-switch input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.aha-switch-ui {
+  width: 40px;
+  height: 24px;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-neutral-300);
+  position: relative;
+  flex: 0 0 auto;
+  transition: background-color var(--aha-duration-mid) var(--aha-ease-standard);
+}
+
+.aha-switch-ui::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-white);
+  box-shadow: var(--aha-shadow-1);
+  transition: transform var(--aha-duration-mid) var(--aha-ease-out);
+}
+
+.aha-switch input:checked + .aha-switch-ui {
+  background: var(--aha-color-primary);
+}
+
+.aha-switch input:checked + .aha-switch-ui::after {
+  transform: translateX(16px);
+}
+
+.aha-switch input:focus-visible + .aha-switch-ui {
+  outline: var(--aha-focus-outline);
+  outline-offset: var(--aha-focus-offset);
+}
+
+.aha-switch:has(input:disabled) {
+  cursor: not-allowed;
+  color: var(--aha-muted);
+}
+
+.aha-switch input:disabled + .aha-switch-ui {
+  background: var(--aha-neutral-200);
+}
+
+.aha-switch:has(input:disabled) input:checked + .aha-switch-ui {
+  background: var(--aha-neutral-300);
+}
+
+/* -------------------------------------------------------------------------
+   Slider
+   ------------------------------------------------------------------------- */
+.aha-slider {
+  display: block;
+  width: 100%;
+  accent-color: var(--aha-color-primary);
+  height: 24px;
+  cursor: pointer;
+}
+
+.aha-slider:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.aha-slider-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aha-space-8);
+  width: 100%;
+  min-width: var(--aha-slider-min);
+  max-width: 100%;
+}
+
+.aha-slider-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--aha-caption-family);
+  font-size: var(--aha-caption-size);
+  color: var(--aha-muted);
+}
+
+.aha-range-dual {
+  --aha-range-track: 6px;
+  --aha-range-thumb: 20px;
+  position: relative;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-width: var(--aha-slider-min);
+  max-width: 100%;
+  overflow: visible;
+}
+
+.aha-range-dual-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: var(--aha-range-track);
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-neutral-200);
+  pointer-events: none;
+}
+
+.aha-range-dual-fill {
+  position: absolute;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--aha-color-primary);
+}
+
+.aha-range-dual input[type="range"] {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  pointer-events: none;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 100%;
+}
+
+.aha-range-dual input[type="range"]::-webkit-slider-runnable-track {
+  background: transparent;
+  height: var(--aha-range-track);
+  border: 0;
+}
+
+.aha-range-dual input[type="range"]::-moz-range-track {
+  background: transparent;
+  height: var(--aha-range-track);
+  border: 0;
+}
+
+.aha-range-dual input[type="range"]::-webkit-slider-thumb {
+  pointer-events: auto;
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  margin-top: calc((var(--aha-range-track) - var(--aha-range-thumb)) / 2);
+  width: var(--aha-range-thumb);
+  height: var(--aha-range-thumb);
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-card);
+  border: 2px solid var(--aha-color-primary);
+  box-shadow: var(--aha-shadow-1);
+  cursor: pointer;
+}
+
+.aha-range-dual input[type="range"]::-moz-range-thumb {
+  pointer-events: auto;
+  box-sizing: border-box;
+  width: var(--aha-range-thumb);
+  height: var(--aha-range-thumb);
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-card);
+  border: 2px solid var(--aha-color-primary);
+  box-shadow: var(--aha-shadow-1);
+  cursor: pointer;
+}
+
+/* -------------------------------------------------------------------------
+   Progress
+   ------------------------------------------------------------------------- */
+.aha-progress {
+  display: block;
+  width: 100%;
+  height: 8px;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-neutral-200);
+  overflow: clip;
+}
+
+.aha-progress > span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--aha-color-primary);
+  transform-origin: left center;
+  transition: transform var(--aha-duration-slow) var(--aha-ease-out);
+}
+
+.aha-progress--soft > span {
+  background: linear-gradient(
+    90deg,
+    var(--aha-color-primary),
+    var(--aha-aqua)
+  );
+}
+
+.aha-progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--aha-space-8);
+  font-family: var(--aha-caption-family);
+  font-size: var(--aha-caption-size);
+  color: var(--aha-muted);
+}
+
+/* -------------------------------------------------------------------------
+   Badge, tag, chip
+   ------------------------------------------------------------------------- */
+.aha-badge,
+.aha-tag,
+.aha-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--aha-space-8);
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-caption-size);
+  font-weight: var(--aha-label-weight);
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.aha-badge {
+  height: 20px;
+  min-width: 20px;
+  padding: 0 6px;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-color-primary);
+  color: var(--aha-color-on-primary);
+  justify-content: center;
+}
+
+.aha-badge--soft {
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary-hover);
+}
+
+.aha-badge--warning {
+  background: var(--aha-color-warning-soft);
+  color: var(--aha-orange-800);
+}
+
+.aha-badge--danger {
+  background: var(--aha-color-danger-soft);
+  color: var(--aha-red-700);
+}
+
+.aha-badge--success {
+  background: var(--aha-color-success-soft);
+  color: var(--aha-color-success);
+}
+
+.aha-tag {
+  height: 24px;
+  padding: 0 var(--aha-space-8);
+  border-radius: var(--aha-radius-sm);
+  background: var(--aha-neutral-100);
+  color: var(--aha-neutral-700);
+}
+
+.aha-chip {
+  height: 32px;
+  padding: 0 var(--aha-space-12);
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-card);
+  color: var(--aha-text-body);
+  border: 1px solid var(--aha-line);
+  cursor: pointer;
+  transition:
+    background-color var(--aha-duration-fast) var(--aha-ease-standard),
+    border-color var(--aha-duration-fast) var(--aha-ease-standard),
+    color var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.aha-chip .aha-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.aha-chip:hover {
+  border-color: color-mix(in srgb, var(--aha-color-primary) 40%, var(--aha-line));
+  background: var(--aha-color-primary-soft);
+}
+
+.aha-chip.is-selected,
+.aha-chip[aria-pressed="true"] {
+  background: var(--aha-color-primary-soft);
+  border-color: color-mix(in srgb, var(--aha-color-primary) 35%, transparent);
+  color: var(--aha-color-primary-hover);
+}
+
+.aha-chip:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* -------------------------------------------------------------------------
+   Avatar
+   ------------------------------------------------------------------------- */
+.aha-avatar {
+  width: var(--aha-avatar-md);
+  height: var(--aha-avatar-md);
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary-hover);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-label-size);
+  font-weight: 600;
+  overflow: clip;
+  flex: 0 0 auto;
+}
+
+.aha-avatar--sm {
+  width: var(--aha-avatar-sm);
+  height: var(--aha-avatar-sm);
+  font-size: 0.6875rem;
+}
+
+.aha-avatar--lg {
+  width: var(--aha-avatar-lg);
+  height: var(--aha-avatar-lg);
+  font-size: 1.125rem;
+}
+
+.aha-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.aha-avatar-group {
+  display: inline-flex;
+}
+
+.aha-avatar-group .aha-avatar {
+  box-shadow: 0 0 0 2px var(--aha-card);
+  margin-left: -8px;
+}
+
+.aha-avatar-group .aha-avatar:first-child {
+  margin-left: 0;
+}
+
+/* -------------------------------------------------------------------------
+   Tooltip
+   ------------------------------------------------------------------------- */
+.aha-tip {
+  position: relative;
+  display: inline-flex;
+}
+
+.aha-tip-bubble {
+  background: var(--aha-ink);
+  color: var(--aha-card);
+  font-family: var(--aha-caption-family);
+  font-size: var(--aha-caption-size);
+  font-weight: 500;
+  line-height: 1.35;
+  padding: 6px 10px;
+  border-radius: var(--aha-radius-sm);
+  max-width: var(--aha-tooltip-max);
+  white-space: normal;
+}
+
+.js .aha-tip {
+  position: relative;
+  display: inline-flex;
+}
+
+.js .aha-tip-bubble {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: var(--aha-z-dropdown);
+  transition:
+    opacity var(--aha-duration-fast) var(--aha-ease-standard),
+    transform var(--aha-duration-fast) var(--aha-ease-standard);
+}
+
+.js .aha-tip:hover .aha-tip-bubble,
+.js .aha-tip:focus-within .aha-tip-bubble {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* -------------------------------------------------------------------------
+   Divider
+   ------------------------------------------------------------------------- */
+.aha-divider {
+  border: 0;
+  border-top: 1px solid var(--aha-line);
+  margin: var(--aha-space-24) 0;
+}
+
+.aha-divider--soft {
+  border-top-color: var(--aha-line-soft);
+}
+
+.aha-divider--vert {
+  border: 0;
+  border-left: 1px solid var(--aha-line);
+  margin: 0 var(--aha-space-16);
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* -------------------------------------------------------------------------
+   Spinner
+   ------------------------------------------------------------------------- */
+.aha-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--aha-blue-100);
+  border-top-color: var(--aha-color-primary);
+  border-radius: var(--aha-radius-pill);
+  animation: aha-spin 700ms linear infinite;
+}
+
+.aha-spinner--sm {
+  width: 16px;
+  height: 16px;
+}
+
+.aha-spinner--lg {
+  width: 32px;
+  height: 32px;
+  border-width: 3px;
+}
+
+.aha-spinner--on-dark {
+  border-color: color-mix(in srgb, var(--aha-white) 25%, transparent);
+  border-top-color: var(--aha-white);
+}
+
+@keyframes aha-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aha-spinner {
+    animation: none;
+    border-top-color: var(--aha-color-primary);
+    border-right-color: var(--aha-color-primary);
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Cards
+   ------------------------------------------------------------------------- */
+.aha-card {
+  background: var(--aha-card);
+  color: var(--aha-text-body);
+  border-radius: var(--aha-radius-lg);
+  box-shadow: var(--aha-shadow-1);
+  border: 1px solid color-mix(in srgb, var(--aha-line) 70%, transparent);
+  padding: var(--aha-card-padding);
+  min-width: var(--aha-card-min);
+  max-width: 100%;
+}
+
+.aha-card--quiet {
+  box-shadow: none;
+  border-color: var(--aha-line-soft);
+}
+
+.aha-card-title {
+  font-family: var(--aha-title-family);
+  font-size: var(--aha-title-size);
+  font-weight: var(--aha-title-weight);
+  line-height: var(--aha-title-leading);
+  color: var(--aha-text-title);
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+
+.aha-card-body {
+  margin-top: var(--aha-space-8);
+  color: var(--aha-muted);
+  font-size: 0.9375rem;
+}
+
+/* Folder */
+.aha-card--folder {
+  padding: 0;
+  overflow: clip;
+  position: relative;
+  box-shadow: var(--aha-shadow-2);
+  transition:
+    box-shadow var(--aha-duration-mid) var(--aha-ease-standard),
+    background-color var(--aha-duration-mid) var(--aha-ease-standard),
+    border-color var(--aha-duration-mid) var(--aha-ease-standard);
+}
+
+.aha-card--folder .aha-folder-tab {
+  height: 14px;
+  width: 42%;
+  margin-left: var(--aha-space-20);
+  margin-top: var(--aha-space-12);
+  border-radius: var(--aha-radius-sm) var(--aha-radius-sm) 0 0;
+  background: var(--aha-neutral-100);
+}
+
+.aha-card--folder .aha-folder-body {
+  margin: 0 var(--aha-space-12) var(--aha-space-12);
+  padding: var(--aha-space-16) var(--aha-space-16) var(--aha-space-20);
+  background: var(--aha-neutral-50);
+  border-radius: var(--aha-radius-md);
+  min-height: 120px;
+}
+
+.aha-card--folder.is-selected {
+  background: var(--aha-color-primary-soft);
+  border-color: color-mix(in srgb, var(--aha-color-primary) 28%, transparent);
+  box-shadow: var(--aha-shadow-glow);
+}
+
+.aha-card--folder.is-selected .aha-folder-tab,
+.aha-card--folder.is-selected .aha-folder-body {
+  background: color-mix(in srgb, var(--aha-white) 70%, var(--aha-color-primary-soft));
+}
+
+.aha-folder-peek {
+  margin-top: var(--aha-space-12);
+  display: flex;
+  flex-direction: column;
+  gap: var(--aha-space-8);
+  opacity: 0.7;
+}
+
+.aha-folder-peek span {
+  display: block;
+  height: 8px;
+  border-radius: var(--aha-radius-pill);
+  background: color-mix(in srgb, var(--aha-color-primary) 16%, var(--aha-neutral-200));
+}
+
+/* Metric */
+.aha-card--metric {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aha-space-8);
+}
+
+.aha-metric-value {
+  font-family: var(--aha-display-family);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.aha-metric-label {
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-label-size);
+  color: var(--aha-muted);
+}
+
+/* Insight */
+.aha-card--insight {
+  display: flex;
+  gap: var(--aha-space-16);
+  align-items: flex-start;
+}
+
+/* Confirm */
+.aha-card--confirm .aha-card-actions {
+  margin-top: var(--aha-space-20);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--aha-space-8);
+}
+
+/* -------------------------------------------------------------------------
+   Chat
+   ------------------------------------------------------------------------- */
+.aha-chat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--aha-space-12);
+}
+
+.aha-bubble {
+  max-width: 80%;
+  padding: var(--aha-space-12) var(--aha-space-16);
+  border-radius: var(--aha-radius-lg);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.aha-bubble--in {
+  align-self: flex-start;
+  background: var(--aha-neutral-100);
+  color: var(--aha-text-body);
+  border-bottom-left-radius: var(--aha-radius-sm);
+}
+
+.aha-bubble--out {
+  align-self: flex-end;
+  background: var(--aha-color-primary);
+  color: var(--aha-color-on-primary);
+  border-bottom-right-radius: var(--aha-radius-sm);
+}
+
+.aha-composer {
+  display: flex;
+  align-items: center;
+  gap: var(--aha-space-8);
+  padding: var(--aha-space-8) var(--aha-space-8) var(--aha-space-8) var(--aha-space-16);
+  background: var(--aha-card);
+  border: 1px solid var(--aha-line-soft);
+  border-radius: var(--aha-radius-pill);
+  box-shadow: var(--aha-shadow-1);
+}
+
+.aha-composer .aha-input {
+  border: 0;
+  box-shadow: none;
+  height: 36px;
+  padding: 0;
+  background: transparent;
+}
+
+.aha-composer .aha-input:focus,
+.aha-composer .aha-input:focus-visible {
+  box-shadow: none;
+}
+
+/* -------------------------------------------------------------------------
+   Toast
+   ------------------------------------------------------------------------- */
+.aha-toast-region {
+  position: fixed;
+  right: var(--aha-space-24);
+  bottom: var(--aha-space-24);
+  z-index: var(--aha-z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--aha-space-8);
+  pointer-events: none;
+}
+
+.aha-toast {
+  pointer-events: auto;
+  min-width: var(--aha-toast-min);
+  max-width: var(--aha-toast-max);
+  padding: var(--aha-space-16) var(--aha-space-20);
+  background: var(--aha-ink);
+  color: var(--aha-card);
+  border-radius: var(--aha-radius-md);
+  box-shadow: var(--aha-shadow-3);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--aha-space-12);
+  animation: aha-toast-in var(--aha-duration-mid) var(--aha-ease-out);
+}
+
+.aha-toast--success {
+  background: var(--aha-color-accent);
+  color: var(--aha-color-on-accent);
+  box-shadow: var(--aha-shadow-3), 0 10px 28px color-mix(in srgb, var(--aha-color-accent) 40%, transparent);
+}
+
+.aha-toast--warning {
+  background: var(--aha-color-warning);
+  color: var(--aha-color-on-warning);
+}
+
+@keyframes aha-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aha-toast {
+    animation: none;
+  }
+}
+
+/* -------------------------------------------------------------------------
+   Modal
+   ------------------------------------------------------------------------- */
+.aha-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: var(--aha-z-modal);
+  background: color-mix(in srgb, var(--aha-midnight) 45%, transparent);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--aha-space-24);
+}
+
+.aha-backdrop.is-open {
+  display: flex;
+}
+
+.aha-modal {
+  width: min(var(--aha-modal-max), 100%);
+  min-width: min(var(--aha-modal-min), 100%);
+  background: var(--aha-card);
+  border-radius: var(--aha-radius-xl);
+  box-shadow: var(--aha-shadow-3);
+  padding: var(--aha-space-32);
+  position: relative;
+}
+
+.aha-modal-close {
+  position: absolute;
+  top: var(--aha-space-16);
+  right: var(--aha-space-16);
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--aha-radius-pill);
+  color: var(--aha-muted);
+}
+
+.aha-modal-close:hover {
+  background: var(--aha-neutral-100);
+  color: var(--aha-text-heading);
+}
+
+.aha-modal-actions {
+  margin-top: var(--aha-space-24);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--aha-space-8);
+}
+
+/* -------------------------------------------------------------------------
+   Product sidebar / nav rail
+   ------------------------------------------------------------------------- */
+.aha-navrail {
+  width: 72px;
+  background: var(--aha-card);
+  border-right: 1px solid var(--aha-line-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--aha-space-16) 0;
+  gap: var(--aha-space-8);
+  min-height: 320px;
+}
+
+.aha-navrail-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--aha-radius-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--aha-muted);
+  background: transparent;
+}
+
+.aha-navrail-btn:hover {
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary);
+}
+
+.aha-navrail-btn.is-active {
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary);
+}
+
+.aha-appside {
+  width: 240px;
+  background: var(--aha-card);
+  border-right: 1px solid var(--aha-line-soft);
+  padding: var(--aha-space-16);
+  display: flex;
+  flex-direction: column;
+  gap: var(--aha-space-8);
+  min-height: 360px;
+}
+
+.aha-appside-item {
+  display: flex;
+  align-items: center;
+  gap: var(--aha-space-12);
+  padding: var(--aha-space-8) var(--aha-space-12);
+  border-radius: var(--aha-radius-md);
+  color: var(--aha-text-body);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.aha-appside-item:hover {
+  background: var(--aha-neutral-100);
+}
+
+.aha-appside-item.is-active {
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary-hover);
+}
+
+/* -------------------------------------------------------------------------
+   Top bar, breadcrumb
+   ------------------------------------------------------------------------- */
+.aha-topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--aha-space-16);
+  min-height: 64px;
+  padding: 0 var(--aha-space-24);
+  background: var(--aha-card);
+  border-bottom: 1px solid var(--aha-line-soft);
+}
+
+.aha-crumb {
+  display: flex;
+  align-items: center;
+  gap: var(--aha-space-8);
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-label-size);
+  color: var(--aha-muted);
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.aha-crumb a {
+  color: var(--aha-muted);
+  text-decoration: none;
+  border-radius: var(--aha-radius-sm);
+}
+
+.aha-crumb a:hover {
+  color: var(--aha-text-heading);
+}
+
+.aha-crumb [aria-current="page"] {
+  color: var(--aha-text-heading);
+  font-weight: 600;
+}
+
+.aha-crumb .aha-icon {
+  width: 12px;
+  height: 12px;
+  color: var(--aha-neutral-400);
+}
+
+/* -------------------------------------------------------------------------
+   Bottom nav
+   ------------------------------------------------------------------------- */
+.aha-bottomnav {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: var(--aha-space-8) var(--aha-space-16) var(--aha-space-12);
+  background: var(--aha-card);
+  border-radius: var(--aha-radius-xl);
+  box-shadow: var(--aha-shadow-3);
+  position: relative;
+}
+
+.aha-bottomnav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--aha-muted);
+  font-family: var(--aha-caption-family);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  min-width: 52px;
+  text-decoration: none;
+  padding: var(--aha-space-8);
+  border-radius: var(--aha-radius-md);
+}
+
+.aha-bottomnav-item.is-active {
+  color: var(--aha-color-primary);
+}
+
+.aha-bottomnav-center {
+  width: var(--aha-fab-size);
+  position: relative;
+  top: -20px;
+}
+
+/* -------------------------------------------------------------------------
+   Tabs
+   ------------------------------------------------------------------------- */
+.aha-tabs {
+  display: flex;
+  gap: var(--aha-space-4);
+  border-bottom: 1px solid var(--aha-line-soft);
+}
+
+.aha-tab {
+  height: 40px;
+  padding: 0 var(--aha-space-16);
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-label-size);
+  font-weight: 600;
+  color: var(--aha-muted);
+  background: transparent;
+  border-radius: var(--aha-radius-sm) var(--aha-radius-sm) 0 0;
+  position: relative;
+}
+
+.aha-tab:hover {
+  color: var(--aha-text-heading);
+}
+
+.aha-tab[aria-selected="true"] {
+  color: var(--aha-color-primary);
+}
+
+.aha-tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: var(--aha-space-12);
+  right: var(--aha-space-12);
+  bottom: -1px;
+  height: 2px;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-color-primary);
+}
+
+.aha-tab-panel {
+  padding-top: var(--aha-space-16);
+}
+
+.aha-tab-panel[hidden] {
+  display: none;
+}
+
+/* -------------------------------------------------------------------------
+   Timeline
+   ------------------------------------------------------------------------- */
+.aha-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding-left: 0;
+}
+
+.aha-timeline-item {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: var(--aha-space-12);
+  position: relative;
+  padding-bottom: var(--aha-space-24);
+}
+
+.aha-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.aha-timeline-mark {
+  width: 24px;
+  height: 24px;
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.aha-timeline-mark .aha-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.aha-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 11px;
+  top: 24px;
+  bottom: 0;
+  width: 2px;
+  background: var(--aha-line-soft);
+}
+
+.aha-timeline-item:last-child::before {
+  display: none;
+}
+
+.aha-timeline-item.is-muted .aha-timeline-mark {
+  background: var(--aha-neutral-100);
+  color: var(--aha-muted);
+}
+
+.aha-timeline-item.is-muted .aha-card-title,
+.aha-timeline-item.is-muted p {
+  color: var(--aha-muted);
+}
+
+/* -------------------------------------------------------------------------
+   Upload
+   ------------------------------------------------------------------------- */
+.aha-upload {
+  background: var(--aha-card);
+  border-radius: var(--aha-radius-xl);
+  box-shadow: var(--aha-shadow-2);
+  padding: var(--aha-space-32);
+  min-height: var(--aha-upload-min-h);
+  max-width: 100%;
+  text-align: center;
+  border: 1px dashed var(--aha-line);
+  transition:
+    border-color var(--aha-duration-mid) var(--aha-ease-standard),
+    box-shadow var(--aha-duration-mid) var(--aha-ease-standard),
+    background-color var(--aha-duration-mid) var(--aha-ease-standard);
+}
+
+.aha-upload.is-hot,
+.aha-upload:focus-within {
+  border-color: var(--aha-color-primary);
+  background: var(--aha-color-primary-soft);
+  box-shadow: var(--aha-glow-soft);
+}
+
+.aha-upload-orb {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto var(--aha-space-16);
+  border-radius: var(--aha-radius-pill);
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--aha-glow);
+}
+
+.aha-file-row {
+  display: flex;
+  align-items: center;
+  gap: var(--aha-space-12);
+  padding: var(--aha-space-12) var(--aha-space-16);
+  background: var(--aha-canvas);
+  border-radius: var(--aha-radius-md);
+  text-align: left;
+}
+
+.aha-file-row .aha-icon {
+  color: var(--aha-color-primary);
+}
+
+.aha-file-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.aha-file-name {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  overflow-wrap: break-word;
+}
+
+.aha-upload-actions {
+  margin-top: var(--aha-space-20);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--aha-space-8);
+}
+
+/* -------------------------------------------------------------------------
+   Info panel, empty, mascot
+   ------------------------------------------------------------------------- */
+.aha-panel {
+  background: var(--aha-card);
+  border-left: 1px solid var(--aha-line-soft);
+  padding: var(--aha-space-24);
+  min-width: 0;
+}
+
+.aha-empty {
+  text-align: center;
+  padding: var(--aha-space-48) var(--aha-space-24);
+  color: var(--aha-muted);
+}
+
+.aha-empty .aha-card-title {
+  color: var(--aha-text-title);
+  margin-bottom: var(--aha-space-8);
+}
+
+.aha-mascot {
+  width: 120px;
+  height: 120px;
+  display: block;
+}
+
+.aha-mascot-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--aha-space-8);
+}
+
+.aha-mascot-caption {
+  font-family: var(--aha-caption-family);
+  font-size: var(--aha-caption-size);
+  color: var(--aha-muted);
+}
+
+.aha-lumen-field {
+  background: var(--aha-gradient-field);
+  border-radius: var(--aha-radius-xl);
+  padding: var(--aha-space-32);
+  position: relative;
+  overflow: clip;
+}
+
+/* -------------------------------------------------------------------------
+   App shell pattern
+   ------------------------------------------------------------------------- */
+.aha-shell {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 240px) minmax(0, 1fr) minmax(0, 280px);
+  background: var(--aha-canvas);
+  border-radius: var(--aha-radius-xl);
+  overflow: clip;
+  border: 1px solid var(--aha-line-soft);
+  min-height: 480px;
+  box-shadow: var(--aha-shadow-2);
+}
+
+.aha-shell-main {
+  min-width: 0;
+  padding: var(--aha-space-24);
+  display: flex;
+  flex-direction: column;
+  gap: var(--aha-space-16);
+}
+
+@media (max-width: 960px) {
+  .aha-shell {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .aha-shell .aha-navrail,
+  .aha-shell .aha-appside,
+  .aha-shell .aha-panel {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid var(--aha-line-soft);
+    min-height: 0;
+  }
+}
+
+/* Forced demo states for typographic matrices (not used in product UI) */
+.aha-btn--primary.is-demo-hover {
+  background: var(--aha-color-primary-hover);
+  box-shadow: var(--aha-glow);
+  transform: translateY(-1px);
+}
+.aha-btn--primary.is-demo-active {
+  background: var(--aha-color-primary-pressed);
+  box-shadow: none;
+  transform: translateY(0);
+}
+.aha-btn--secondary.is-demo-hover {
+  background: var(--aha-color-primary-soft);
+  border-color: color-mix(in srgb, var(--aha-color-primary) 40%, var(--aha-line));
+  color: var(--aha-color-primary-hover);
+}
+.aha-btn--secondary.is-demo-active {
+  background: var(--aha-blue-100);
+}
+.aha-btn--ghost.is-demo-hover {
+  background: var(--aha-color-primary-soft);
+  color: var(--aha-color-primary-hover);
+}
+.aha-btn--ghost.is-demo-active {
+  background: var(--aha-blue-100);
+}
+.aha-btn--danger.is-demo-hover {
+  background: var(--aha-color-danger-hover);
+  transform: translateY(-1px);
+}
+.aha-btn--danger.is-demo-active {
+  background: var(--aha-red-800);
+  transform: translateY(0);
+}
+.aha-btn--warning.is-demo-hover {
+  background: var(--aha-color-warning-hover);
+  color: var(--aha-color-on-primary);
+  transform: translateY(-1px);
+}
+.aha-btn--warning.is-demo-active {
+  background: var(--aha-orange-800);
+  color: var(--aha-color-on-primary);
+  transform: translateY(0);
+}
+.aha-btn.is-demo-focus,
+.aha-input.is-demo-focus,
+.aha-textarea.is-demo-focus,
+.aha-select-trigger.is-demo-focus,
+.aha-chip.is-demo-focus {
+  outline: var(--aha-focus-outline);
+  outline-offset: var(--aha-focus-offset);
+}
+.aha-input.is-demo-hover,
+.aha-textarea.is-demo-hover {
+  border-color: color-mix(in srgb, var(--aha-color-primary) 35%, var(--aha-line));
+}
+
+
+/* Large filled knobs for composed range filters */
+.aha-range-dual--knob {
+  --aha-range-track: 4px;
+  --aha-range-thumb: 28px;
+  height: 40px;
+}
+
+.aha-range-dual--knob input[type="range"]::-webkit-slider-thumb {
+  border: 0;
+  background: var(--aha-color-primary);
+  box-shadow: var(--aha-shadow-1), 0 0 0 6px color-mix(in srgb, var(--aha-color-primary) 18%, transparent);
+}
+
+.aha-range-dual--knob input[type="range"]::-moz-range-thumb {
+  border: 0;
+  background: var(--aha-color-primary);
+  box-shadow: var(--aha-shadow-1), 0 0 0 6px color-mix(in srgb, var(--aha-color-primary) 18%, transparent);
+}

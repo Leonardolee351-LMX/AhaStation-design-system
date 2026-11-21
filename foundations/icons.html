@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>图标：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">基础 / 图标</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">图标 <span class="docs-en">Icons</span></h1>
+        <p class="docs-lede">24 像素、圆角描边，接近 Phosphor 的规则字重。颜色跟随文字，不用表情符号代替图标。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage">
+            <div class="docs-icon-grid">
+              <div class="docs-icon-cell"><span data-icon="plus"></span><span>plus</span></div>
+<div class="docs-icon-cell"><span data-icon="minus"></span><span>minus</span></div>
+<div class="docs-icon-cell"><span data-icon="check"></span><span>check</span></div>
+<div class="docs-icon-cell"><span data-icon="close"></span><span>close</span></div>
+<div class="docs-icon-cell"><span data-icon="search"></span><span>search</span></div>
+<div class="docs-icon-cell"><span data-icon="chevronDown"></span><span>chevronDown</span></div>
+<div class="docs-icon-cell"><span data-icon="chevronRight"></span><span>chevronRight</span></div>
+<div class="docs-icon-cell"><span data-icon="chevronLeft"></span><span>chevronLeft</span></div>
+<div class="docs-icon-cell"><span data-icon="upload"></span><span>upload</span></div>
+<div class="docs-icon-cell"><span data-icon="download"></span><span>download</span></div>
+<div class="docs-icon-cell"><span data-icon="folder"></span><span>folder</span></div>
+<div class="docs-icon-cell"><span data-icon="file"></span><span>file</span></div>
+<div class="docs-icon-cell"><span data-icon="calendar"></span><span>calendar</span></div>
+<div class="docs-icon-cell"><span data-icon="message"></span><span>message</span></div>
+<div class="docs-icon-cell"><span data-icon="settings"></span><span>settings</span></div>
+<div class="docs-icon-cell"><span data-icon="home"></span><span>home</span></div>
+<div class="docs-icon-cell"><span data-icon="grid"></span><span>grid</span></div>
+<div class="docs-icon-cell"><span data-icon="list"></span><span>list</span></div>
+<div class="docs-icon-cell"><span data-icon="user"></span><span>user</span></div>
+<div class="docs-icon-cell"><span data-icon="bell"></span><span>bell</span></div>
+<div class="docs-icon-cell"><span data-icon="more"></span><span>more</span></div>
+<div class="docs-icon-cell"><span data-icon="warning"></span><span>warning</span></div>
+<div class="docs-icon-cell"><span data-icon="info"></span><span>info</span></div>
+<div class="docs-icon-cell"><span data-icon="trash"></span><span>trash</span></div>
+<div class="docs-icon-cell"><span data-icon="link"></span><span>link</span></div>
+<div class="docs-icon-cell"><span data-icon="copy"></span><span>copy</span></div>
+<div class="docs-icon-cell"><span data-icon="clock"></span><span>clock</span></div>
+<div class="docs-icon-cell"><span data-icon="pin"></span><span>pin</span></div>
+<div class="docs-icon-cell"><span data-icon="star"></span><span>star</span></div>
+<div class="docs-icon-cell"><span data-icon="send"></span><span>send</span></div>
+<div class="docs-icon-cell"><span data-icon="paperclip"></span><span>paperclip</span></div>
+<div class="docs-icon-cell"><span data-icon="image"></span><span>image</span></div>
+<div class="docs-icon-cell"><span data-icon="mic"></span><span>mic</span></div>
+<div class="docs-icon-cell"><span data-icon="eye"></span><span>eye</span></div>
+<div class="docs-icon-cell"><span data-icon="lock"></span><span>lock</span></div>
+<div class="docs-icon-cell"><span data-icon="edit"></span><span>edit</span></div>
+<div class="docs-icon-cell"><span data-icon="share"></span><span>share</span></div>
+<div class="docs-icon-cell"><span data-icon="filter"></span><span>filter</span></div>
+<div class="docs-icon-cell"><span data-icon="tag"></span><span>tag</span></div>
+<div class="docs-icon-cell"><span data-icon="menu"></span><span>menu</span></div>
+<div class="docs-icon-cell"><span data-icon="kanban"></span><span>kanban</span></div>
+<div class="docs-icon-cell"><span data-icon="meeting"></span><span>meeting</span></div>
+<div class="docs-icon-cell"><span data-icon="project"></span><span>project</span></div>
+<div class="docs-icon-cell"><span data-icon="checkCircle"></span><span>checkCircle</span></div>
+            </div>
+          </div>
+          <p class="docs-note">在页面中用 <code class="docs-token">&lt;span data-icon="upload"&gt;</code>，由 nav.js 注入描边 SVG。产品代码可改为直接内联同一路径。</p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

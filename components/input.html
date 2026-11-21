@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>输入：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 输入</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">输入 <span class="docs-en">Input</span></h1>
+        <p class="docs-lede">收集简短文字、较长说明或搜索。项目室里常用于文件名、会议主题与查找。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">现场示例</h2>
+          <div class="docs-stage">
+            <div class="docs-grid-2">
+              <label class="aha-field">
+                <span class="aha-field-label">会议主题</span>
+                <input class="aha-input" type="text" placeholder="例如：品牌升级周会" value="品牌升级周会">
+              </label>
+              <label class="aha-field">
+                <span class="aha-field-label">搜索</span>
+                <span class="aha-search">
+                  <span data-icon="search"></span>
+                  <input class="aha-input" type="search" placeholder="搜索文件、会议、看板">
+                </span>
+              </label>
+              <label class="aha-field" style="grid-column: 1 / -1;">
+                <span class="aha-field-label">会议说明</span>
+                <textarea class="aha-textarea" placeholder="补充议程或附件说明">把设计系统参考图放到「视觉升级」文件夹，会后同步看板。</textarea>
+              </label>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-input-height" title="点击复制">--aha-input-height</code><code class="docs-token" data-copy="--aha-radius-md" title="点击复制">--aha-radius-md</code><code class="docs-token" data-copy="--aha-ring" title="点击复制">--aha-ring</code><code class="docs-token" data-copy="--aha-line" title="点击复制">--aha-line</code></div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">状态矩阵</h2>
+          <div style="overflow:auto;">
+            <table class="docs-matrix">
+              <thead><tr><th></th><th>默认</th><th>悬停</th><th>焦点</th><th>输入中</th><th>错误</th><th>禁用</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td class="docs-rowhead">输入框</td>
+                  <td><input class="aha-input" placeholder="文件名称"></td>
+                  <td><input class="aha-input is-demo-hover" placeholder="文件名称"></td>
+                  <td><input class="aha-input is-demo-focus" placeholder="文件名称"></td>
+                  <td><input class="aha-input" value="会议纪要.pdf"></td>
+                  <td><input class="aha-input is-error" value=""><span class="aha-field-hint is-error">请填写文件名</span></td>
+                  <td><input class="aha-input" value="只读项目" disabled></td>
+                </tr>
+                <tr>
+                  <td class="docs-rowhead">文本域</td>
+                  <td><textarea class="aha-textarea" rows="2" placeholder="说明"></textarea></td>
+                  <td><textarea class="aha-textarea is-demo-hover" rows="2" placeholder="说明"></textarea></td>
+                  <td><textarea class="aha-textarea is-demo-focus" rows="2">正在编辑说明</textarea></td>
+                  <td><textarea class="aha-textarea" rows="2">已写入议程</textarea></td>
+                  <td><textarea class="aha-textarea is-error" rows="2"></textarea></td>
+                  <td><textarea class="aha-textarea" rows="2" disabled>不可编辑</textarea></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

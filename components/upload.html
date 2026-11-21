@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>上传：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 上传</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">上传 <span class="docs-en">Upload</span></h1>
+        <p class="docs-lede">把文件送进项目室。发光的圆形是主要的投放点，下方再列出文件行、进度，以及取消与上传。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage docs-stage--canvas">
+            <form class="aha-upload" style="max-width: 28rem; margin: 0 auto;" action="#" method="post" onsubmit="return false;">
+              <div class="aha-upload-orb"><span data-icon="upload"></span></div>
+              <h3 class="aha-card-title">放到这里，或选择文件</h3>
+              <p class="aha-card-body">支持项目简报、会议纪要与看板附件。</p>
+              <label class="aha-btn aha-btn--secondary aha-btn--pill" style="margin: var(--aha-space-16) auto 0; position:relative; overflow:clip;">
+                <span class="aha-btn-label">选择文件</span>
+                <input type="file" style="position:absolute;inset:0;opacity:0;cursor:pointer;">
+              </label>
+              <div class="aha-file-row" hidden style="margin-top: var(--aha-space-20);">
+                <span data-icon="file"></span>
+                <div class="aha-file-meta">
+                  <div class="aha-file-name">会议纪要.pdf</div>
+                  <div class="aha-progress-label"><span data-upload-status>等待读取</span><span></span></div>
+                  <div class="aha-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100"><span style="transform:scaleX(0)"></span></div>
+                </div>
+              </div>
+              <div class="aha-upload-actions">
+                <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button"><span class="aha-btn-label">取消</span></button>
+                <button class="aha-btn aha-btn--primary aha-btn--pill" type="button" data-upload-start data-toast="已加入视觉升级" data-toast-kind="success"><span data-icon="upload"></span><span class="aha-btn-label">上传</span></button>
+              </div>
+            </form>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-glow" title="点击复制">--aha-glow</code><code class="docs-token" data-copy="--aha-radius-xl" title="点击复制">--aha-radius-xl</code><code class="docs-token" data-copy="--aha-color-primary-soft" title="点击复制">--aha-color-primary-soft</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>字体：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">基础 / 字体</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">字体 <span class="docs-en">Typography</span></h1>
+        <p class="docs-lede">标题用 Plus Jakarta Sans，正文、标签、界面与说明用 Inter。角色先于字号：先问这段文字是什么，再选对应 token。颜色也跟着层级走——大标题接近墨色，正文是近黑的灰，标签与说明逐步变浅，不要整页同一档死黑。</p>
+
+        <section class="docs-section">
+          <div class="docs-grid-2">
+            <div>
+              <p class="docs-type-label">Plus Jakarta Sans，标题</p>
+              <p class="docs-type-giant">Aa</p>
+              <p class="docs-type-caption">display、heading、title</p>
+            </div>
+            <div>
+              <p class="docs-type-label">Inter，正文与界面</p>
+              <p class="docs-type-giant" style="font-family: var(--aha-font-body);">Aa</p>
+              <p class="docs-type-caption">body、label、caption</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">角色</h2>
+          <div class="docs-type-row">
+            <div class="docs-type-role">display<br><code class="docs-token" data-copy="--aha-display-size" title="点击复制">--aha-display-size</code></div>
+            <div>
+              <p class="docs-type-display">项目室</p>
+              <p class="docs-type-caption">Plus Jakarta Sans，700，clamp 2.75–4.5rem，行高 1.05。颜色 --aha-text-display（#0F172A）。</p>
+            </div>
+          </div>
+          <div class="docs-type-row">
+            <div class="docs-type-role">heading<br><code class="docs-token" data-copy="--aha-heading-size" title="点击复制">--aha-heading-size</code></div>
+            <div>
+              <p class="docs-type-heading">本周会议</p>
+              <p class="docs-type-caption">Plus Jakarta Sans，700，约 2rem，行高 1.2。颜色 --aha-text-heading（#0F172A）。</p>
+            </div>
+          </div>
+          <div class="docs-type-row">
+            <div class="docs-type-role">title<br><code class="docs-token" data-copy="--aha-title-size" title="点击复制">--aha-title-size</code></div>
+            <div>
+              <p class="docs-type-title">品牌升级看板</p>
+              <p class="docs-type-caption">Plus Jakarta Sans，600，1.25rem，行高 1.35。颜色 --aha-text-title（#1E293B）。</p>
+            </div>
+          </div>
+          <div class="docs-type-row">
+            <div class="docs-type-role">body<br><code class="docs-token" data-copy="--aha-body-size" title="点击复制">--aha-body-size</code></div>
+            <div>
+              <p class="docs-type-body">把会议纪要、参考文件和待办放进同一个项目室，避免在窗口之间来回切换。正文保持舒适的行长与行高，让长时间阅读仍然清楚。</p>
+              <p class="docs-type-caption">Inter，400，1rem，行高 1.6。颜色 --aha-text-body（#334155）。</p>
+            </div>
+          </div>
+          <div class="docs-type-row">
+            <div class="docs-type-role">label<br><code class="docs-token" data-copy="--aha-label-size" title="点击复制">--aha-label-size</code></div>
+            <div>
+              <p class="docs-type-label">文件名称</p>
+              <p class="docs-type-caption">Inter，500，0.8125rem，行高 1.4。颜色 --aha-text-label（#475569）。不用大写字距。</p>
+            </div>
+          </div>
+          <div class="docs-type-row">
+            <div class="docs-type-role">caption<br><code class="docs-token" data-copy="--aha-caption-size" title="点击复制">--aha-caption-size</code></div>
+            <div>
+              <p class="docs-type-caption">更新于刚才，由你上传</p>
+              <p class="docs-type-caption">Inter，400，0.75rem，行高 1.45。颜色 --aha-text-caption（#64748B）。</p>
+            </div>
+          </div>
+        </section>
+
+        
+        <section class="docs-section">
+          <h2 class="docs-h2">颜色层级</h2>
+          <p class="docs-prose">大层级用接近黑的灰，小层级用浅灰。正文不要再用最深的墨色，那一档留给 display 和 heading。</p>
+          <div class="docs-text-scale">
+            <div class="docs-text-scale-row">
+              <span class="docs-text-scale-name" style="color: var(--aha-text-display);">display</span>
+              <code class="docs-token" data-copy="--aha-text-display" title="点击复制">--aha-text-display</code>
+              <span class="docs-text-scale-sample" style="color: var(--aha-text-display);"><span class="docs-text-scale-chip" style="background: var(--aha-text-display); display:inline-block; vertical-align:middle; margin-right: 10px;"></span>#0F172A · 近黑</span>
+            </div>
+            <div class="docs-text-scale-row">
+              <span class="docs-text-scale-name" style="color: var(--aha-text-heading);">heading</span>
+              <code class="docs-token" data-copy="--aha-text-heading" title="点击复制">--aha-text-heading</code>
+              <span class="docs-text-scale-sample" style="color: var(--aha-text-heading);"><span class="docs-text-scale-chip" style="background: var(--aha-text-heading); display:inline-block; vertical-align:middle; margin-right: 10px;"></span>#0F172A · 近黑</span>
+            </div>
+            <div class="docs-text-scale-row">
+              <span class="docs-text-scale-name" style="color: var(--aha-text-title);">title</span>
+              <code class="docs-token" data-copy="--aha-text-title" title="点击复制">--aha-text-title</code>
+              <span class="docs-text-scale-sample" style="color: var(--aha-text-title);"><span class="docs-text-scale-chip" style="background: var(--aha-text-title); display:inline-block; vertical-align:middle; margin-right: 10px;"></span>#1E293B</span>
+            </div>
+            <div class="docs-text-scale-row">
+              <span class="docs-text-scale-name" style="color: var(--aha-text-body);">body</span>
+              <code class="docs-token" data-copy="--aha-text-body" title="点击复制">--aha-text-body</code>
+              <span class="docs-text-scale-sample" style="color: var(--aha-text-body);"><span class="docs-text-scale-chip" style="background: var(--aha-text-body); display:inline-block; vertical-align:middle; margin-right: 10px;"></span>#334155 · 近黑的灰</span>
+            </div>
+            <div class="docs-text-scale-row">
+              <span class="docs-text-scale-name" style="color: var(--aha-text-label);">label</span>
+              <code class="docs-token" data-copy="--aha-text-label" title="点击复制">--aha-text-label</code>
+              <span class="docs-text-scale-sample" style="color: var(--aha-text-label);"><span class="docs-text-scale-chip" style="background: var(--aha-text-label); display:inline-block; vertical-align:middle; margin-right: 10px;"></span>#475569</span>
+            </div>
+            <div class="docs-text-scale-row">
+              <span class="docs-text-scale-name" style="color: var(--aha-text-caption);">caption</span>
+              <code class="docs-token" data-copy="--aha-text-caption" title="点击复制">--aha-text-caption</code>
+              <span class="docs-text-scale-sample" style="color: var(--aha-text-caption);"><span class="docs-text-scale-chip" style="background: var(--aha-text-caption); display:inline-block; vertical-align:middle; margin-right: 10px;"></span>#64748B · 浅灰</span>
+            </div>
+            <div class="docs-text-scale-row">
+              <span class="docs-text-scale-name" style="color: var(--aha-text-faint);">faint</span>
+              <code class="docs-token" data-copy="--aha-text-faint" title="点击复制">--aha-text-faint</code>
+              <span class="docs-text-scale-sample" style="color: var(--aha-text-faint);"><span class="docs-text-scale-chip" style="background: var(--aha-text-faint); display:inline-block; vertical-align:middle; margin-right: 10px;"></span>#94A3B8 · 时间戳、装饰</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">字重</h2>
+          <p class="docs-prose">Inter 常用 400 / 500 / 600 / 700。Plus Jakarta Sans 在标题里常用 600 / 700 / 800。</p>
+          <div class="docs-stage" style="margin-top: var(--aha-space-16);">
+            <p class="docs-type-body" style="font-weight:400;">400 常规，会议将在项目室进行</p>
+            <p class="docs-type-body" style="font-weight:500;">500 中等，会议将在项目室进行</p>
+            <p class="docs-type-body" style="font-weight:600;">600 半粗，会议将在项目室进行</p>
+            <p class="docs-type-body" style="font-weight:700;">700 粗体，会议将在项目室进行</p>
+            <p class="docs-type-title" style="font-weight:800;margin-top:var(--aha-space-16);">800 特粗，只用于大标题强调</p>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

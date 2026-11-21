@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>标签页：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 标签页</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">标签页 <span class="docs-en">Tabs</span></h1>
+        <p class="docs-lede">在同一上下文里切换视图，例如文件、会议与看板。当前项用一条蓝色短线标出，标签本身不要再做成实心按钮。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage">
+            <div class="aha-tabs" role="tablist" aria-label="项目室视图">
+              <button class="aha-tab" type="button" role="tab" id="tab-files" aria-controls="panel-files" aria-selected="true">文件</button>
+              <button class="aha-tab" type="button" role="tab" id="tab-meet" aria-controls="panel-meet" aria-selected="false" tabindex="-1">会议</button>
+              <button class="aha-tab" type="button" role="tab" id="tab-board" aria-controls="panel-board" aria-selected="false" tabindex="-1">看板</button>
+            </div>
+            <div class="aha-tab-panel" id="panel-files" role="tabpanel" aria-labelledby="tab-files">
+              <p>视觉升级文件夹里的参考图与纪要。</p>
+            </div>
+            <div class="aha-tab-panel" id="panel-meet" role="tabpanel" aria-labelledby="tab-meet" hidden>
+              <p>本周已排定的项目室会议。</p>
+            </div>
+            <div class="aha-tab-panel" id="panel-board" role="tabpanel" aria-labelledby="tab-board" hidden>
+              <p>与该项目室同步的待办。</p>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code><code class="docs-token" data-copy="--aha-line-soft" title="点击复制">--aha-line-soft</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

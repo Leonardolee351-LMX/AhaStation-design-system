@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>徽章与标签：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 徽章与标签</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">徽章与标签 <span class="docs-en">Badge, tag, chip</span></h1>
+        <p class="docs-lede">徽章计数或标记状态；标签描述属性；筛选芯片用于切换一组视图。选中的芯片使用柔和的蓝色填充，而不是实心主按钮。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">徽章</h2>
+          <div class="docs-stage docs-row">
+            <span class="aha-badge">3</span>
+            <span class="aha-badge aha-badge--soft">新</span>
+            <span class="aha-badge aha-badge--success">已同步</span>
+            <span class="aha-badge aha-badge--warning">待确认</span>
+            <span class="aha-badge aha-badge--danger">失败</span>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">标签</h2>
+          <div class="docs-stage docs-row">
+            <span class="aha-tag">项目室</span>
+            <span class="aha-tag">会议</span>
+            <span class="aha-tag">看板</span>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">筛选芯片</h2>
+          <div class="docs-stage docs-row">
+            <button class="aha-chip is-selected" type="button" data-toggle aria-pressed="true"><span data-icon="check"></span>全部</button>
+            <button class="aha-chip" type="button" data-toggle aria-pressed="false"><span data-icon="calendar"></span>会议</button>
+            <button class="aha-chip" type="button" data-toggle aria-pressed="false"><span data-icon="kanban"></span>看板</button>
+            <button class="aha-chip" type="button" data-toggle aria-pressed="false"><span data-icon="file"></span>文件</button>
+            <button class="aha-chip" type="button" disabled>归档</button>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary-soft" title="点击复制">--aha-color-primary-soft</code><code class="docs-token" data-copy="--aha-radius-pill" title="点击复制">--aha-radius-pill</code><code class="docs-token" data-copy="--aha-line" title="点击复制">--aha-line</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

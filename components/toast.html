@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>吐司：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 吐司</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">吐司 <span class="docs-en">Toast</span></h1>
+        <p class="docs-lede">在操作完成后给出短暂确认，不打断当前工作。错误和警告可以停留得稍久，但仍不应代替对话框。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">色系</h2>
+          <p class="docs-prose">完成用品牌青绿色（提夫尼蓝）提醒成功；普通提示保持深色墨底；警告沿用品牌橙，而不是另起一套色。</p>
+          <div class="docs-stage">
+            <div class="docs-toast-preview">
+              <div class="aha-toast aha-toast--success" role="status">会议纪要已上传到品牌升级</div>
+              <div class="aha-toast" role="status">已复制项目室链接</div>
+              <div class="aha-toast aha-toast--warning" role="status">文件超过建议大小，仍可继续</div>
+            </div>
+          </div>
+          <div class="docs-annote">
+            <code class="docs-token" data-copy="--aha-color-accent" title="点击复制">--aha-color-accent</code>
+            <code class="docs-token" data-copy="--aha-ink" title="点击复制">--aha-ink</code>
+            <code class="docs-token" data-copy="--aha-color-warning" title="点击复制">--aha-color-warning</code>
+            <code class="docs-token" data-copy="--aha-z-toast" title="点击复制">--aha-z-toast</code>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">现场示例</h2>
+          <div class="docs-stage docs-row">
+            <button class="aha-btn aha-btn--primary aha-btn--pill" type="button" data-toast="会议纪要已上传到品牌升级" data-toast-kind="success"><span class="aha-btn-label">完成上传</span></button>
+            <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button" data-toast="已复制项目室链接"><span class="aha-btn-label">普通提示</span></button>
+            <button class="aha-btn aha-btn--warning" type="button" data-toast="文件超过建议大小，仍可继续" data-toast-kind="warning"><span class="aha-btn-label">发出警告</span></button>
+          </div>
+          <p class="docs-note">点击按钮，提示会出现在右下角，随后自动消失。</p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

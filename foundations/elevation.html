@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>层级与光效：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">基础 / 层级与光效</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">层级与光效 <span class="docs-en">Elevation and glow</span></h1>
+        <p class="docs-lede">阴影是基础元素，和颜色、间距同一层。它表达高度：卡片离画布越远，影子越软、越开。光晕只留给被选中或正在发生的事，不要让每一张卡都发光。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">层级标尺</h2>
+          <p class="docs-prose">0 到 3 是高度阶梯，glow 是光而不是再高一档。每层由贴近接触面的小影和更开的环境影叠成，色相带一点墨，避免死黑边。</p>
+          <div class="docs-stage docs-stage--canvas">
+            <div class="docs-elev-scale">
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-0);">
+                <strong class="docs-type-label">层级 0</strong>
+                <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-shadow-0" title="点击复制">--aha-shadow-0</code></span>
+                <span class="docs-type-caption">平贴画布，内嵌区域</span>
+              </div>
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-1);">
+                <strong class="docs-type-label">层级 1</strong>
+                <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-shadow-1" title="点击复制">--aha-shadow-1</code></span>
+                <span class="docs-type-caption">默认可点击卡片、输入</span>
+              </div>
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-2);">
+                <strong class="docs-type-label">层级 2</strong>
+                <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-shadow-2" title="点击复制">--aha-shadow-2</code></span>
+                <span class="docs-type-caption">文件夹、上传区、浮起面板</span>
+              </div>
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-3);">
+                <strong class="docs-type-label">层级 3</strong>
+                <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-shadow-3" title="点击复制">--aha-shadow-3</code></span>
+                <span class="docs-type-caption">对话框、底栏、下拉菜单</span>
+              </div>
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-glow);">
+                <strong class="docs-type-label">光晕</strong>
+                <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-shadow-glow" title="点击复制">--aha-shadow-glow</code></span>
+                <span class="docs-type-caption">主按钮悬停、选中、发光球体</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">在色场上</h2>
+          <p class="docs-prose">同一套阴影也要在蓝色场地上成立。卡片仍是乳白，影子可以略带蓝，但不要换成彩色描边。</p>
+          <div class="docs-elev-field">
+            <div class="docs-elev-scale">
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-0);">
+                <strong class="docs-type-label">0</strong>
+              </div>
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-1);">
+                <strong class="docs-type-label">1</strong>
+              </div>
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-2);">
+                <strong class="docs-type-label">2</strong>
+              </div>
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-3);">
+                <strong class="docs-type-label">3</strong>
+              </div>
+              <div class="docs-elev-item" style="box-shadow: var(--aha-shadow-glow);">
+                <strong class="docs-type-label">glow</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">语义角色</h2>
+          <p class="docs-prose">组件不要直接写死 1、2、3，按状态选用语义 token。阴影变化只和位移一起过渡，时长用 mid，曲线用 ease-out。</p>
+          <div class="docs-elev-roles">
+            <article class="docs-elev-live" data-elev="hover" tabindex="0">
+              <p class="docs-type-label">静止 → 悬停</p>
+              <span class="docs-type-caption">把指针放上来，看它抬起</span>
+              <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-elev-rest" title="点击复制">--aha-elev-rest</code> → <code class="docs-token" data-copy="--aha-elev-hover" title="点击复制">--aha-elev-hover</code></span>
+            </article>
+            <article class="docs-elev-live" data-elev="drag" data-drag-card data-drag-reset tabindex="0">
+              <p class="docs-type-label">拖起</p>
+              <span class="docs-type-caption">按住拖一下，松开会落回原位</span>
+              <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-elev-drag" title="点击复制">--aha-elev-drag</code></span>
+            </article>
+            <article class="docs-elev-live" data-elev="overlay">
+              <p class="docs-type-label">浮层</p>
+              <span class="docs-type-caption">对话框、下拉、确认卡</span>
+              <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-elev-overlay" title="点击复制">--aha-elev-overlay</code></span>
+            </article>
+            <article class="docs-elev-live" data-elev="glow">
+              <p class="docs-type-label">光晕</p>
+              <span class="docs-type-caption">选中、主操作悬停</span>
+              <span class="docs-type-caption"><code class="docs-token" data-copy="--aha-elev-glow" title="点击复制">--aha-elev-glow</code></span>
+            </article>
+          </div>
+          <p class="docs-note" style="margin-top: var(--aha-space-16);">拖拽时的影子比层级 3 更开，并带一点主色，表示卡片已经被拿起来。光晕不是第四档高度，不要和拖起叠用。</p>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">光场</h2>
+          <p class="docs-prose">光场是缓慢浮动的光团，叠加一组有规律的圆形晶格，而不是整齐的直线色带或方砖。它给吉祥物、洞察卡片或总览画廊做场地，运动要微弱，并尊重减少动效设置。</p>
+          <div class="docs-stage docs-stage--field" style="min-height: 200px; display:flex; align-items:center; justify-content:center;">
+            <div class="aha-card" style="max-width: 16rem; box-shadow: var(--aha-elev-hover);">
+              <h3 class="aha-card-title">项目室已就绪</h3>
+              <p class="aha-card-body">光在背后，内容仍在白卡片上阅读。</p>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-gradient-field" title="点击复制">--aha-gradient-field</code><code class="docs-token" data-copy="--aha-gradient-hero" title="点击复制">--aha-gradient-hero</code><code class="docs-token" data-copy="--aha-gradient-spectrum" title="点击复制">--aha-gradient-spectrum</code><code class="docs-token" data-copy="--aha-glow" title="点击复制">--aha-glow</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

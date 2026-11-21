@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>滑杆：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 滑杆</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">滑杆 <span class="docs-en">Slider</span></h1>
+        <p class="docs-lede">在连续范围内取值，例如调整预览缩放，或用双柄限定文件大小区间。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">单柄</h2>
+          <div class="docs-stage">
+            <div class="aha-slider-wrap">
+              <div class="aha-slider-meta"><span>预览缩放</span><span data-slider-value="zoom-slider">150</span></div>
+              <input class="aha-slider" id="zoom-slider" type="range" min="50" max="200" value="150" aria-label="预览缩放">
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code></div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">双柄</h2>
+          <p class="docs-prose">两个手柄重叠在同一轨道上，用于筛选一个区间。</p>
+          <div class="docs-stage">
+            <div class="aha-slider-wrap">
+              <div class="aha-slider-meta"><span>文件大小（MB）</span><span data-range-meta>20 – 80</span></div>
+              <div class="aha-range-dual">
+                <div class="aha-range-dual-track"><div class="aha-range-dual-fill"></div></div>
+                <input type="range" min="0" max="100" value="20" aria-label="最小文件大小">
+                <input type="range" min="0" max="100" value="80" aria-label="最大文件大小">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">大圆点</h2>
+          <p class="docs-prose">筛选卡片里使用更大的实心圆点。圆点中心必须落在轨道中线上，不要上下偏移。</p>
+          <div class="docs-stage">
+            <div class="aha-slider-wrap">
+              <div class="aha-slider-meta"><span>时间范围</span><span data-range-meta>2 – 8</span></div>
+              <div class="aha-range-dual aha-range-dual--knob">
+                <div class="aha-range-dual-track"><div class="aha-range-dual-fill"></div></div>
+                <input type="range" min="1" max="12" value="2" aria-label="开始月份">
+                <input type="range" min="1" max="12" value="8" aria-label="结束月份">
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">禁用</h2>
+          <div class="docs-stage">
+            <input class="aha-slider" type="range" min="0" max="100" value="40" disabled aria-label="禁用的滑杆">
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

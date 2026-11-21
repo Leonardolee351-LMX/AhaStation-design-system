@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>顶栏：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 顶栏</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">顶栏 <span class="docs-en">Top bar and breadcrumb</span></h1>
+        <p class="docs-lede">顶栏收纳搜索、成员与当前路径。面包屑用小图标分开，不用间隔点连接元信息。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage" style="padding:0; overflow:clip;">
+            <header class="aha-topbar">
+              <nav class="aha-crumb" aria-label="路径">
+                <a href="#">项目室</a>
+                <span data-icon="chevronRight"></span>
+                <a href="#">视觉升级</a>
+                <span data-icon="chevronRight"></span>
+                <span aria-current="page">会议纪要</span>
+              </nav>
+              <span style="flex:1"></span>
+              <div class="aha-search" style="width: 16rem;">
+                <span data-icon="search"></span>
+                <input class="aha-input" type="search" placeholder="搜索文件" aria-label="搜索文件">
+              </div>
+              <span class="aha-avatar" aria-label="周">周</span>
+            </header>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-card" title="点击复制">--aha-card</code><code class="docs-token" data-copy="--aha-line-soft" title="点击复制">--aha-line-soft</code><code class="docs-token" data-copy="--aha-muted" title="点击复制">--aha-muted</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>上传与确认：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">模式 / 上传与确认</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">上传与确认 <span class="docs-en">Upload and confirm</span></h1>
+        <p class="docs-lede">一次完整的投放：选择或拖入文件，看到进度，再确认放进哪个项目室。这里用的全部是组件库里的真实零件。</p>
+
+        <section class="docs-section">
+          <div class="docs-grid-2">
+            <form class="aha-upload" action="#" method="post" onsubmit="return false;">
+              <div class="aha-upload-orb"><span data-icon="upload"></span></div>
+              <h3 class="aha-card-title">放到这里</h3>
+              <p class="aha-card-body">或选择要送进项目室的文件。</p>
+              <label class="aha-btn aha-btn--secondary aha-btn--pill" style="margin: var(--aha-space-16) auto 0; position:relative;">
+                <span class="aha-btn-label">选择文件</span>
+                <input type="file" style="position:absolute; inset:0; opacity:0; cursor:pointer;">
+              </label>
+              <div class="aha-file-row" hidden style="margin-top: var(--aha-space-20);">
+                <span data-icon="file"></span>
+                <div class="aha-file-meta">
+                  <div class="aha-file-name">会议纪要.pdf</div>
+                  <div class="aha-progress-label"><span data-upload-status>等待读取</span></div>
+                  <div class="aha-progress"><span style="transform:scaleX(0)"></span></div>
+                </div>
+              </div>
+              <div class="aha-upload-actions">
+                <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button"><span class="aha-btn-label">取消</span></button>
+                <button class="aha-btn aha-btn--primary aha-btn--pill" type="button" data-open-modal=confirm-upload><span class="aha-btn-label">继续</span></button>
+              </div>
+            </form>
+            <article class="aha-card aha-card--confirm">
+              <h3 class="aha-card-title">目标项目室</h3>
+              <p class="aha-card-body">确认后，文件会出现在「视觉升级」，并可以同步一条看板记录。</p>
+              <label class="aha-field" style="margin-top: var(--aha-space-16);">
+                <span class="aha-field-label">归档到</span>
+                <select class="aha-select-native">
+                  <option selected>视觉升级</option>
+                  <option>本周会议</option>
+                  <option>参考归档</option>
+                </select>
+              </label>
+              <label class="aha-choice" style="margin-top: var(--aha-space-16);">
+                <input type="checkbox" checked>
+                <span class="aha-check-ui"><span data-icon="check"></span></span>
+                同步一条待办到看板
+              </label>
+            </article>
+          </div>
+        </section>
+        <div class="aha-backdrop" id="confirm-upload" role="dialog" aria-modal="true" aria-labelledby="confirm-title" aria-hidden="true">
+          <div class="aha-modal">
+            <button class="aha-modal-close" type="button" data-close-modal aria-label="关闭"><span data-icon="close"></span></button>
+            <h2 class="aha-card-title" id="confirm-title">确认上传？</h2>
+            <p class="aha-card-body">会议纪要.pdf 将放入「视觉升级」，并在看板新增一条待办。</p>
+            <div class="aha-modal-actions">
+              <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button" data-close-modal><span class="aha-btn-label">取消</span></button>
+              <button class="aha-btn aha-btn--primary aha-btn--pill" type="button" data-close-modal data-toast="已上传到视觉升级" data-toast-kind="success"><span data-icon="upload"></span><span class="aha-btn-label">上传</span></button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

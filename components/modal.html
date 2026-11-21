@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>对话框：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 对话框</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">对话框 <span class="docs-en">Modal</span></h1>
+        <p class="docs-lede">需要用户做一次明确决定时使用，例如确认上传或删除。打开后应能用 Esc 或关闭按钮离开，并回到原来的焦点。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage">
+            <button class="aha-btn aha-btn--primary aha-btn--pill" type="button" data-open-modal="upload-modal"><span class="aha-btn-label">确认上传</span></button>
+            <button class="aha-btn aha-btn--danger" type="button" data-open-modal="delete-modal"><span class="aha-btn-label">删除文件</span></button>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-radius-xl" title="点击复制">--aha-radius-xl</code><code class="docs-token" data-copy="--aha-shadow-3" title="点击复制">--aha-shadow-3</code><code class="docs-token" data-copy="--aha-z-modal" title="点击复制">--aha-z-modal</code><code class="docs-token" data-copy="--aha-midnight" title="点击复制">--aha-midnight</code></div>
+        </section>
+        <div class="aha-backdrop" id="upload-modal" role="dialog" aria-modal="true" aria-labelledby="upload-modal-title" aria-hidden="true">
+          <div class="aha-modal">
+            <button class="aha-modal-close" type="button" data-close-modal aria-label="关闭"><span data-icon="close"></span></button>
+            <h2 class="aha-card-title" id="upload-modal-title">上传到「视觉升级」？</h2>
+            <p class="aha-card-body">会议纪要.pdf 会加入该项目室。这不会覆盖已有文件。</p>
+            <div class="aha-modal-actions">
+              <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button" data-close-modal><span class="aha-btn-label">取消</span></button>
+              <button class="aha-btn aha-btn--primary aha-btn--pill" type="button" data-close-modal data-toast="已加入视觉升级" data-toast-kind="success"><span data-icon="upload"></span><span class="aha-btn-label">上传</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="aha-backdrop" id="delete-modal" role="dialog" aria-modal="true" aria-labelledby="delete-modal-title" aria-hidden="true">
+          <div class="aha-modal">
+            <button class="aha-modal-close" type="button" data-close-modal aria-label="关闭"><span data-icon="close"></span></button>
+            <h2 class="aha-card-title" id="delete-modal-title">删除这份纪要？</h2>
+            <p class="aha-card-body">删除后无法从项目室恢复。若只是想整理，可以先移到归档文件夹。</p>
+            <div class="aha-modal-actions">
+              <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button" data-close-modal><span class="aha-btn-label">取消</span></button>
+              <button class="aha-btn aha-btn--danger" type="button" data-close-modal><span class="aha-btn-label">删除文件</span></button>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

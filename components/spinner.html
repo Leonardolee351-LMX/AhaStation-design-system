@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>加载：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 加载</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">加载 <span class="docs-en">Spinner</span></h1>
+        <p class="docs-lede">表示正在等待一个还没有进度数字的过程。已经能量化时，请改用进度条。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage docs-row">
+            <span class="aha-spinner aha-spinner--sm" aria-label="加载中"></span>
+            <span class="aha-spinner" aria-label="加载中"></span>
+            <span class="aha-spinner aha-spinner--lg" aria-label="加载中"></span>
+          </div>
+          <div class="docs-stage docs-stage--dark docs-row" style="margin-top: var(--aha-space-16);">
+            <span class="aha-spinner aha-spinner--on-dark" aria-label="加载中"></span>
+            <span>在深色场地上的加载</span>
+          </div>
+          <p class="docs-note">若用户开启减少动效，转圈会停止，圆环仍保留为静态提示。</p>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code><code class="docs-token" data-copy="--aha-blue-100" title="点击复制">--aha-blue-100</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

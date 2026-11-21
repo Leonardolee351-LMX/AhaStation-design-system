@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>颜色：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">基础 / 颜色</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">颜色 <span class="docs-en">Color</span></h1>
+        <p class="docs-lede">原始色阶先铺出来，组件只使用语义名。主色停在 #2563EB。蓝绿亮色只作提醒，图表改走蓝、靛紫与酒红，不把糖果粉和交通灯绿配在一起。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">参考板</h2>
+          <p class="docs-prose">来自风格意向的六色骨架：文本白、画布、线条、中灰、强调蓝、墨色。</p>
+          <div class="docs-swatch-row" style="margin-top: var(--aha-space-16);">
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-white);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">文本 / 卡片</span>
+                    <span class="docs-swatch-var">--aha-white</span>
+                    <span class="docs-swatch-hex">#FFFFFF</span>
+                    
+                  </figcaption>
+                </figure>
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-neutral-50);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">画布</span>
+                    <span class="docs-swatch-var">--aha-neutral-50</span>
+                    <span class="docs-swatch-hex">#F7F8FC</span>
+                    
+                  </figcaption>
+                </figure>
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-neutral-300);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">线条</span>
+                    <span class="docs-swatch-var">--aha-neutral-300</span>
+                    <span class="docs-swatch-hex">#CBD5E1</span>
+                    
+                  </figcaption>
+                </figure>
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-neutral-500);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">中灰（装饰）</span>
+                    <span class="docs-swatch-var">--aha-neutral-500</span>
+                    <span class="docs-swatch-hex">#64748B</span>
+                    <span class="docs-swatch-hex">正文请用 600</span>
+                  </figcaption>
+                </figure>
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-blue-500);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">强调</span>
+                    <span class="docs-swatch-var">--aha-blue-500</span>
+                    <span class="docs-swatch-hex">#2563EB</span>
+                    
+                  </figcaption>
+                </figure>
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-neutral-900);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">墨色 / 链接底</span>
+                    <span class="docs-swatch-var">--aha-neutral-900</span>
+                    <span class="docs-swatch-hex">#0F172A</span>
+                    
+                  </figcaption>
+                </figure>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">光谱</h2>
+          <p class="docs-prose">光的语言：午夜蓝到天蓝、水蓝，再溶进纯白。用于英雄区、选中晕染、吉祥物场地。不要改成紫到蓝。</p>
+          <div class="docs-spectrum" role="img" aria-label="午夜到白色光谱" style="margin-top: var(--aha-space-16);"></div>
+          <div class="docs-spectrum-stops">
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip docs-swatch-chip--wide" style="background: var(--aha-midnight);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">Midnight Blue</span>
+                    <span class="docs-swatch-var">--aha-midnight</span>
+                    <span class="docs-swatch-hex">#00071C</span>
+                    
+                  </figcaption>
+                </figure>
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip docs-swatch-chip--wide" style="background: var(--aha-azure);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">Azure Blue</span>
+                    <span class="docs-swatch-var">--aha-azure</span>
+                    <span class="docs-swatch-hex">#006EC2</span>
+                    
+                  </figcaption>
+                </figure>
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip docs-swatch-chip--wide" style="background: var(--aha-aqua);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">Aqua Blue</span>
+                    <span class="docs-swatch-var">--aha-aqua</span>
+                    <span class="docs-swatch-hex">#52D2E4</span>
+                    
+                  </figcaption>
+                </figure>
+            
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip docs-swatch-chip--wide" style="background: var(--aha-spectrum-white);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">Pure White</span>
+                    <span class="docs-swatch-var">--aha-spectrum-white</span>
+                    <span class="docs-swatch-hex">#FFFFFF</span>
+                    
+                  </figcaption>
+                </figure>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">蓝色阶</h2>
+          <p class="docs-prose">中段 500 即主色。<code class="docs-token" data-copy="--aha-blue-500" title="点击复制">--aha-blue-500</code></p>
+          <div style="margin-top: var(--aha-space-16);"><div class="docs-scale" role="img" aria-label="blue 色阶"><span style="background: var(--aha-blue-50);" title="--aha-blue-50"></span><span style="background: var(--aha-blue-100);" title="--aha-blue-100"></span><span style="background: var(--aha-blue-200);" title="--aha-blue-200"></span><span style="background: var(--aha-blue-300);" title="--aha-blue-300"></span><span style="background: var(--aha-blue-400);" title="--aha-blue-400"></span><span style="background: var(--aha-blue-500);" title="--aha-blue-500"></span><span style="background: var(--aha-blue-600);" title="--aha-blue-600"></span><span style="background: var(--aha-blue-700);" title="--aha-blue-700"></span><span style="background: var(--aha-blue-800);" title="--aha-blue-800"></span><span style="background: var(--aha-blue-900);" title="--aha-blue-900"></span></div></div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">中性色阶</h2>
+          <div style="margin-top: var(--aha-space-16);"><div class="docs-scale" role="img" aria-label="neutral 色阶"><span style="background: var(--aha-neutral-50);" title="--aha-neutral-50"></span><span style="background: var(--aha-neutral-100);" title="--aha-neutral-100"></span><span style="background: var(--aha-neutral-200);" title="--aha-neutral-200"></span><span style="background: var(--aha-neutral-300);" title="--aha-neutral-300"></span><span style="background: var(--aha-neutral-400);" title="--aha-neutral-400"></span><span style="background: var(--aha-neutral-500);" title="--aha-neutral-500"></span><span style="background: var(--aha-neutral-600);" title="--aha-neutral-600"></span><span style="background: var(--aha-neutral-700);" title="--aha-neutral-700"></span><span style="background: var(--aha-neutral-800);" title="--aha-neutral-800"></span><span style="background: var(--aha-neutral-900);" title="--aha-neutral-900"></span></div></div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">语义色</h2>
+          <p class="docs-prose">组件只应绑定这些名字。改语义映射，比在组件里写死色阶更安全。</p>
+          <div class="docs-stage" style="margin-top: var(--aha-space-16); overflow:auto;">
+            <table class="docs-table">
+              <thead>
+                <tr><th>用途</th><th>变量</th><th>值</th><th>说明</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-canvas)"></span>画布</td><td><code class="docs-token" data-copy="--aha-canvas" title="点击复制">--aha-canvas</code></td><td>#F7F8FC</td><td>页面背景</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-canvas-tint)"></span>淡蓝底</td><td><code class="docs-token" data-copy="--aha-canvas-tint" title="点击复制">--aha-canvas-tint</code></td><td>#EEF4FF</td><td>选中、柔和强调</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-card)"></span>卡片</td><td><code class="docs-token" data-copy="--aha-card" title="点击复制">--aha-card</code></td><td>#FFFFFF</td><td>浮起的界面单元</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-ink)"></span>墨色</td><td><code class="docs-token" data-copy="--aha-ink" title="点击复制">--aha-ink</code></td><td>#0F172A</td><td>最深墨色，留给 display / heading；正文改走 --aha-text-body</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-muted)"></span>次级文字</td><td><code class="docs-token" data-copy="--aha-muted" title="点击复制">--aha-muted</code></td><td>#475569</td><td>比参考中灰更深，保证 4.5:1</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-line)"></span>线条</td><td><code class="docs-token" data-copy="--aha-line" title="点击复制">--aha-line</code></td><td>#CBD5E1</td><td>描边与分割</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-color-primary)"></span>主色</td><td><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code></td><td>#2563EB</td><td>主按钮、链接、选中</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-color-primary-hover)"></span>主色悬停</td><td><code class="docs-token" data-copy="--aha-color-primary-hover" title="点击复制">--aha-color-primary-hover</code></td><td>#1D4FD8</td><td></td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-color-danger)"></span>危险</td><td><code class="docs-token" data-copy="--aha-color-danger" title="点击复制">--aha-color-danger</code></td><td>#DC2626</td><td>破坏性操作</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-color-warning)"></span>警告</td><td><code class="docs-token" data-copy="--aha-color-warning" title="点击复制">--aha-color-warning</code></td><td>#EA580C</td><td>仅警告或次要强调</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-color-success)"></span>成功</td><td><code class="docs-token" data-copy="--aha-color-success" title="点击复制">--aha-color-success</code></td><td>#0C7C8A</td><td>完成态，沿用品牌青绿的深色写法以保证对比；浅底用 success-soft。不用于图表</td></tr>
+                <tr><td><span class="docs-chip-mini" style="background:var(--aha-color-accent)"></span>亮色提醒</td><td><code class="docs-token" data-copy="--aha-color-accent" title="点击复制">--aha-color-accent</code></td><td>#52D2E4</td><td>蓝绿高光：新到、在线、小标记，不进主按钮</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="docs-callout" style="margin-top: var(--aha-space-16);">
+            <strong>橙色不是品牌主色。</strong> <code class="docs-token" data-copy="--aha-color-warning" title="点击复制">--aha-color-warning</code> 只出现在警告按钮、警告徽章或需要被立即看见的次要强调。默认行动一律用蓝。成功色与完成态走同一条青绿，用更深的 <code class="docs-token" data-copy="--aha-color-success" title="点击复制">--aha-color-success</code>，不再使用交通灯绿。蓝绿亮色 <code class="docs-token" data-copy="--aha-color-accent" title="点击复制">--aha-color-accent</code> 只作点缀，面积要小。
+          </div>
+        </section>
+
+        <section class="docs-section">
+                    <h2 class="docs-h2">对比与数据色</h2>
+          <p class="docs-prose">正文必须达到 4.5:1。参考板的 #64748B 在画布上约 4.48:1，所以次级文字改用 <code class="docs-token" data-copy="--aha-muted" title="点击复制">--aha-muted</code>。图表不再用交通灯绿和糖果粉，改走同一条冷暖弧线：品牌蓝、降饱和的靛紫、沉一点的酒红。紫色不进入品牌光场，也不和蓝色做成渐变，这样不会发俗。</p>
+          <div class="docs-swatch-grid" style="margin-top: var(--aha-space-16);">
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-data-blue);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">数据蓝</span>
+                    <span class="docs-swatch-var">--aha-data-blue</span>
+                    <span class="docs-swatch-hex">#2563EB</span>
+                  </figcaption>
+                </figure>
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-data-indigo);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">数据靛紫</span>
+                    <span class="docs-swatch-var">--aha-data-indigo</span>
+                    <span class="docs-swatch-hex">#5450B8</span>
+                  </figcaption>
+                </figure>
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-data-rose);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">数据酒红</span>
+                    <span class="docs-swatch-var">--aha-data-rose</span>
+                    <span class="docs-swatch-hex">#B44A6E</span>
+                  </figcaption>
+                </figure>
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-color-accent);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">蓝绿亮色</span>
+                    <span class="docs-swatch-var">--aha-color-accent</span>
+                    <span class="docs-swatch-hex">#52D2E4</span>
+                  </figcaption>
+                </figure>
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-color-delta-up);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">上升</span>
+                    <span class="docs-swatch-var">--aha-color-delta-up</span>
+                    <span class="docs-swatch-hex">#0C7C8A</span>
+                  </figcaption>
+                </figure>
+                <figure class="docs-swatch">
+                  <div class="docs-swatch-chip" style="background: var(--aha-color-delta-down);"></div>
+                  <figcaption class="docs-swatch-meta">
+                    <span class="docs-swatch-name">下降</span>
+                    <span class="docs-swatch-var">--aha-color-delta-down</span>
+                    <span class="docs-swatch-hex">#9A3558</span>
+                  </figcaption>
+                </figure>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

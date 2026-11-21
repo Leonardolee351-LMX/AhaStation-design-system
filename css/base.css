@@ -1,0 +1,137 @@
+/* Hallmark · base · overflow-x clip, focus-visible instant, reduced-motion, tokens only */
+
+/* Floor: clip, not hidden, not 100vw */
+html,
+body {
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--aha-canvas);
+  color: var(--aha-text-body);
+  font-family: var(--aha-body-family);
+  font-size: var(--aha-body-size);
+  font-weight: var(--aha-body-weight);
+  line-height: var(--aha-body-leading);
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+button {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  overflow-wrap: break-word;
+  min-width: 0;
+  font-family: var(--aha-heading-family);
+  font-weight: var(--aha-heading-weight);
+  line-height: var(--aha-heading-leading);
+  color: var(--aha-text-heading);
+}
+
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: var(--aha-focus-outline);
+  outline-offset: var(--aha-focus-offset);
+}
+
+.aha-skip {
+  position: absolute;
+  left: var(--aha-space-16);
+  top: var(--aha-space-16);
+  z-index: calc(var(--aha-z-modal) + 1);
+  padding: var(--aha-space-8) var(--aha-space-16);
+  background: var(--aha-ink);
+  color: var(--aha-card);
+  border-radius: var(--aha-radius-sm);
+  font-family: var(--aha-label-family);
+  font-size: var(--aha-label-size);
+  font-weight: var(--aha-label-weight);
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.aha-skip:focus,
+.aha-skip:focus-visible {
+  transform: translateY(0);
+  outline-color: var(--aha-card);
+}
+
+code,
+.aha-token {
+  font-family: var(--aha-font-mono);
+  font-size: 0.8125em;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

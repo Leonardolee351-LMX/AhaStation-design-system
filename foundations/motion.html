@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>动效：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">基础 / 动效</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">动效 <span class="docs-en">Motion</span></h1>
+        <p class="docs-lede">动效是组件行为，不是装饰。只过渡透明度、位移与阴影，不过渡 width、height、top、left，也不使用 transition: all。进入用减速曲线，离开用加速曲线并更短。页面用翻页，不要两层叠化。整体要干净利落，少做大幅位移和漫长淡出。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">原则</h2>
+          <ul class="docs-prose docs-rule-list">
+            <li>进入：略微上移并放大到原位，阴影从 0 或静止抬到目标层级，曲线用 <code class="docs-token" data-copy="--aha-ease-out" title="点击复制">--aha-ease-out</code>。</li>
+            <li>离开：略微缩小或下移并淡出，曲线用 <code class="docs-token" data-copy="--aha-ease-in" title="点击复制">--aha-ease-in</code>，时长通常比进入短一档。</li>
+            <li>拖拽：按下立刻抬起（<code class="docs-token" data-copy="--aha-elev-drag" title="点击复制">--aha-elev-drag</code>）。跟随指针时可以暂时离开，松手必须落入自动布局的格子，不能停在任意坐标。</li>
+            <li>页面切换：整页翻动，前进时当前页完全翻出、新页从另一侧进入；两页始终各占整面，不叠加淡出。返回则方向相反。</li>
+            <li>若系统开启「减少动态效果」，直接到达目标状态，内容保持可见。</li>
+          </ul>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">时长与曲线</h2>
+          <p class="docs-prose">点一条轨道，看该档时长如何走完。页面翻页用 280ms，干净利落，不必拖得很长。</p>
+          <div class="docs-stage">
+            <div class="docs-duration-stack">
+              <button type="button" class="docs-duration-play" data-duration-play>
+                <span class="docs-duration-meta">
+                  <code class="docs-token" data-copy="--aha-duration-fast" title="点击复制">--aha-duration-fast</code>
+                  <span>120ms · 悬停、焦点、按钮</span>
+                </span>
+                <span class="docs-duration-track" aria-hidden="true"><span class="docs-duration-fill" style="--aha-play-duration: var(--aha-duration-fast); --aha-play-ease: var(--aha-ease-standard)"></span></span>
+              </button>
+              <button type="button" class="docs-duration-play" data-duration-play>
+                <span class="docs-duration-meta">
+                  <code class="docs-token" data-copy="--aha-duration-mid" title="点击复制">--aha-duration-mid</code>
+                  <span>180ms · 开关、菜单、卡片进入</span>
+                </span>
+                <span class="docs-duration-track" aria-hidden="true"><span class="docs-duration-fill" style="--aha-play-duration: var(--aha-duration-mid); --aha-play-ease: var(--aha-ease-in)"></span></span>
+              </button>
+              <button type="button" class="docs-duration-play" data-duration-play>
+                <span class="docs-duration-meta">
+                  <code class="docs-token" data-copy="--aha-duration-slow" title="点击复制">--aha-duration-slow</code>
+                  <span>240ms · 稍慢的衔接</span>
+                </span>
+                <span class="docs-duration-track" aria-hidden="true"><span class="docs-duration-fill" style="--aha-play-duration: var(--aha-duration-slow); --aha-play-ease: var(--aha-ease-out)"></span></span>
+              </button>
+              <button type="button" class="docs-duration-play" data-duration-play>
+                <span class="docs-duration-meta">
+                  <code class="docs-token" data-copy="--aha-duration-page" title="点击复制">--aha-duration-page</code>
+                  <span>280ms · 页面翻页</span>
+                </span>
+                <span class="docs-duration-track" aria-hidden="true"><span class="docs-duration-fill" style="--aha-play-duration: var(--aha-duration-page); --aha-play-ease: var(--aha-ease-out)"></span></span>
+              </button>
+            </div>
+          </div>
+          <div class="docs-annote" style="margin-top: var(--aha-space-16);">
+            <code class="docs-token" data-copy="--aha-ease-out" title="点击复制">--aha-ease-out</code>
+            <code class="docs-token" data-copy="--aha-ease-standard" title="点击复制">--aha-ease-standard</code>
+            <code class="docs-token" data-copy="--aha-ease-in" title="点击复制">--aha-ease-in</code>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">四种编排</h2>
+          <p class="docs-prose">原则在这一页，完整的可点演示在「动效编排」组件页：弹出、拖拽、消失，以及页面切换。</p>
+          <div class="docs-choreo-index">
+            <a class="docs-choreo-link" href="../components/motion.html#enter">
+              <span class="docs-type-label">弹出</span>
+              <span class="docs-type-caption">进入 · 180ms · ease-out</span>
+            </a>
+            <a class="docs-choreo-link" href="../components/motion.html#drag">
+              <span class="docs-type-label">拖拽</span>
+              <span class="docs-type-caption">按下即抬起，松开再落下</span>
+            </a>
+            <a class="docs-choreo-link" href="../components/motion.html#exit">
+              <span class="docs-type-label">消失</span>
+              <span class="docs-type-caption">离开 · 120ms · ease-in</span>
+            </a>
+            <a class="docs-choreo-link" href="../components/motion.html#page">
+              <span class="docs-type-label">页面切换</span>
+              <span class="docs-type-caption">翻页 · 280ms</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">基础示例</h2>
+          <div class="docs-grid-2">
+            <div>
+              <p class="docs-type-label">淡入</p>
+              <div class="docs-motion-card docs-motion-fade"><div class="docs-motion-dot"></div></div>
+            </div>
+            <div>
+              <p class="docs-type-label">抬起</p>
+              <div class="docs-motion-card docs-motion-lift"><div class="docs-motion-dot"></div></div>
+            </div>
+          </div>
+          <p class="docs-note" style="margin-top: var(--aha-space-16);">若系统开启「减少动态效果」，这些循环会停止，内容仍保持可见。按钮与开关会几乎立刻到达目标状态。</p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

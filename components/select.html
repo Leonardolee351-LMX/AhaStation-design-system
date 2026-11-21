@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>选择器：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 选择器</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">选择器 <span class="docs-en">Select</span></h1>
+        <p class="docs-lede">从既定列表里选一项，例如把文件归档到某个项目室。选项不宜过长；若要搜索，改用带建议的输入框。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">现场示例</h2>
+          <div class="docs-stage">
+            <div style="max-width: 20rem;">
+                <div class="aha-select">
+                  <button class="aha-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="aha-select-value">项目室 A</span>
+                    <span data-icon="chevronDown"></span>
+                  </button>
+                  <div class="aha-select-menu" role="listbox">
+                    <button class="aha-select-option is-selected" type="button" data-value="a">项目室 A</button>
+                    <button class="aha-select-option" type="button" data-value="b">视觉升级</button>
+                    <button class="aha-select-option" type="button" data-value="c">本周会议</button>
+                  </div>
+                </div></div>
+            <p class="docs-note" style="margin-top:var(--aha-space-16);">点击即可打开。也提供原生选择器，供表单降级使用。</p>
+            <label class="aha-field" style="max-width:20rem;margin-top:var(--aha-space-16);">
+              <span class="aha-field-label">原生选择器</span>
+              <select class="aha-select-native">
+                <option>项目室 A</option>
+                <option>视觉升级</option>
+                <option>本周会议</option>
+              </select>
+            </label>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-input-height" title="点击复制">--aha-input-height</code><code class="docs-token" data-copy="--aha-shadow-3" title="点击复制">--aha-shadow-3</code><code class="docs-token" data-copy="--aha-z-dropdown" title="点击复制">--aha-z-dropdown</code></div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">状态</h2>
+          <div class="docs-grid-3">
+            <div><p class="docs-type-label">默认</p>
+                <div class="aha-select">
+                  <button class="aha-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="aha-select-value">项目室 A</span>
+                    <span data-icon="chevronDown"></span>
+                  </button>
+                  <div class="aha-select-menu" role="listbox">
+                    <button class="aha-select-option is-selected" type="button" data-value="a">项目室 A</button>
+                    <button class="aha-select-option" type="button" data-value="b">视觉升级</button>
+                    <button class="aha-select-option" type="button" data-value="c">本周会议</button>
+                  </div>
+                </div></div>
+            <div><p class="docs-type-label">禁用</p>
+                <div class="aha-select">
+                  <button class="aha-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" disabled>
+                    <span class="aha-select-value">项目室 A</span>
+                    <span data-icon="chevronDown"></span>
+                  </button>
+                  <div class="aha-select-menu" role="listbox">
+                    <button class="aha-select-option is-selected" type="button" data-value="a">项目室 A</button>
+                    <button class="aha-select-option" type="button" data-value="b">视觉升级</button>
+                    <button class="aha-select-option" type="button" data-value="c">本周会议</button>
+                  </div>
+                </div></div>
+            <div><p class="docs-type-label">已选</p>
+                <div class="aha-select">
+                  <button class="aha-select-trigger" type="button" aria-haspopup="listbox" aria-expanded="false">
+                    <span class="aha-select-value">视觉升级</span>
+                    <span data-icon="chevronDown"></span>
+                  </button>
+                  <div class="aha-select-menu" role="listbox">
+                    <button class="aha-select-option is-selected" type="button" data-value="a">项目室 A</button>
+                    <button class="aha-select-option" type="button" data-value="b">视觉升级</button>
+                    <button class="aha-select-option" type="button" data-value="c">本周会议</button>
+                  </div>
+                </div></div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

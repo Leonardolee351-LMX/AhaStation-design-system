@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>卡片：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 卡片</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">卡片 <span class="docs-en">Card</span></h1>
+        <p class="docs-lede">承载一块完整的信息。默认为乳白、大圆角、轻阴影。文件夹卡片可以轻轻鼓起，选中时用蓝色晕染而不是重描边。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">默认</h2>
+          <div class="docs-stage docs-stage--canvas">
+            <article class="aha-card" style="max-width: 22rem;">
+              <h3 class="aha-card-title">项目室说明</h3>
+              <p class="aha-card-body">把本周会议、参考文件和看板待办放在一起，避免信息散落在不同窗口。</p>
+            </article>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">文件夹</h2>
+          <p class="docs-prose">轻度的立体感来自标签与内页的层叠。选中态是蓝色薄洗，并露出内容的一角。</p>
+          <div class="docs-stage docs-stage--canvas">
+            <div class="docs-grid-2">
+              <article class="aha-card aha-card--folder">
+                <div class="aha-folder-tab"></div>
+                <div class="aha-folder-body">
+                  <h3 class="aha-card-title">会议纪要</h3>
+                  <p class="aha-card-body">8 个文件</p>
+                </div>
+              </article>
+              <article class="aha-card aha-card--folder is-selected">
+                <div class="aha-folder-tab"></div>
+                <div class="aha-folder-body">
+                  <h3 class="aha-card-title">视觉升级</h3>
+                  <p class="aha-card-body">12 个文件，已选中</p>
+                  <div class="aha-folder-peek" aria-hidden="true"><span></span><span style="width:70%"></span><span style="width:42%"></span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">指标与洞察</h2>
+          <div class="docs-grid-2">
+            <article class="aha-card aha-card--metric">
+              <p class="aha-metric-label">今日会议</p>
+              <p class="aha-metric-value">3</p>
+              <p class="aha-card-body">这是组件示例里的占位数字，不是产品指标。</p>
+            </article>
+            <article class="aha-card aha-card--insight">
+              <div data-mascot style="width:72px;height:72px;flex:0 0 auto;"></div>
+              <div>
+                <p class="aha-mascot-caption">洞察（占位）</p>
+                <h3 class="aha-card-title">可以把纪要别进看板</h3>
+                <p class="aha-card-body">下午的项目室会议还没有对应的待办。确认后我会帮你建一条。</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">确认</h2>
+          <div class="docs-stage docs-stage--canvas">
+            <article class="aha-card aha-card--confirm" style="max-width: 24rem;">
+              <h3 class="aha-card-title">上传到「视觉升级」？</h3>
+              <p class="aha-card-body">会议纪要.pdf 将出现在该项目室，并在看板里留下一条记录。</p>
+              <div class="aha-card-actions">
+                <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button"><span class="aha-btn-label">取消</span></button>
+                <button class="aha-btn aha-btn--primary aha-btn--pill" type="button"><span data-icon="upload"></span><span class="aha-btn-label">上传</span></button>
+              </div>
+            </article>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-card" title="点击复制">--aha-card</code><code class="docs-token" data-copy="--aha-radius-lg" title="点击复制">--aha-radius-lg</code><code class="docs-token" data-copy="--aha-shadow-2" title="点击复制">--aha-shadow-2</code><code class="docs-token" data-copy="--aha-color-primary-soft" title="点击复制">--aha-color-primary-soft</code><code class="docs-token" data-copy="--aha-card-padding" title="点击复制">--aha-card-padding</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

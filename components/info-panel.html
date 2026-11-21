@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>信息面板：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 信息面板</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">信息面板 <span class="docs-en">Info panel</span></h1>
+        <p class="docs-lede">出现在主区右侧，检查当前选中的文件、会议或卡片。它是附加层，不应再套一层卡片。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage" style="padding:0; overflow:clip; display:grid; grid-template-columns: minmax(0,1fr) minmax(0,16rem);">
+            <div class="aha-shell-main">
+              <h3 class="aha-card-title">会议纪要.pdf</h3>
+              <p class="aha-card-body">选中主区中的文件后，右侧面板给出属性与行动。</p>
+            </div>
+            <aside class="aha-panel">
+              <p class="docs-type-label">文件信息</p>
+              <h3 class="aha-card-title" style="margin-top: var(--aha-space-8);">会议纪要.pdf</h3>
+              <p class="aha-card-body">视觉升级，今天 16:20</p>
+              <div class="docs-stack" style="margin-top: var(--aha-space-20);">
+                <button class="aha-btn aha-btn--primary aha-btn--sm aha-btn--pill" type="button"><span class="aha-btn-label">打开</span></button>
+                <button class="aha-btn aha-btn--secondary aha-btn--sm" type="button"><span class="aha-btn-label">移动到…</span></button>
+              </div>
+            </aside>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-card" title="点击复制">--aha-card</code><code class="docs-token" data-copy="--aha-line-soft" title="点击复制">--aha-line-soft</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

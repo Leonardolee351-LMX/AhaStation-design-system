@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>组件总览：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 组件总览</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">组件总览 <span class="docs-en">Components</span></h1>
+        <p class="docs-lede">把常见界面单元放在同一块光场上，先感受节奏，再进入各页查看完整状态。</p>
+
+        <div class="docs-gallery" style="margin-top: var(--aha-space-32);">
+          <div class="docs-gallery-grid">
+            <div class="docs-float docs-span-4">
+              <p class="docs-type-label" style="margin-bottom:var(--aha-space-12);">按钮</p>
+              <div class="docs-stack">
+                <button class="aha-btn aha-btn--primary aha-btn--pill" type="button"><span class="aha-btn-label">创建项目室</span></button>
+                <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button"><span class="aha-btn-label">稍后再说</span></button>
+                <button class="aha-btn aha-btn--ghost" type="button"><span class="aha-btn-label">了解详情</span></button>
+              </div>
+            </div>
+            <div class="docs-float docs-span-4">
+              <p class="docs-type-label" style="margin-bottom:var(--aha-space-12);">筛选</p>
+              <div class="docs-row">
+                <button class="aha-chip is-selected" type="button" data-toggle aria-pressed="true"><span data-icon="check"></span>进行中</button>
+                <button class="aha-chip" type="button" data-toggle aria-pressed="false">会议</button>
+                <button class="aha-chip" type="button" data-toggle aria-pressed="false">文件</button>
+              </div>
+            </div>
+            <div class="docs-float docs-span-4">
+              <article class="aha-card aha-card--metric" style="box-shadow:none;border:0;padding:0;">
+                <p class="aha-metric-label">今日会议</p>
+                <p class="aha-metric-value">3</p>
+                <p class="aha-card-body">示例数据，用于展示指标卡片，不是产品声明。</p>
+              </article>
+            </div>
+            <div class="docs-float docs-span-5">
+              <article class="aha-card aha-card--folder is-selected">
+                <div class="aha-folder-tab"></div>
+                <div class="aha-folder-body">
+                  <h3 class="aha-card-title">视觉升级</h3>
+                  <p class="aha-card-body">设计稿与纪要</p>
+                  <div class="aha-folder-peek" aria-hidden="true"><span></span><span style="width:55%"></span></div>
+                </div>
+              </article>
+            </div>
+            <div class="docs-float docs-span-4">
+              <ol class="aha-timeline">
+                <li class="aha-timeline-item">
+                  <span class="aha-timeline-mark"><span data-icon="check"></span></span>
+                  <div><h3 class="aha-card-title">纪要已上传</h3><p class="docs-type-caption">今天 16:20</p></div>
+                </li>
+                <li class="aha-timeline-item is-muted">
+                  <span class="aha-timeline-mark"><span data-icon="clock"></span></span>
+                  <div><h3 class="aha-card-title">看板待同步</h3><p class="docs-type-caption">明天</p></div>
+                </li>
+              </ol>
+            </div>
+            <div class="docs-float docs-span-3">
+              <div class="aha-bottomnav" style="padding-bottom: var(--aha-space-16);">
+                <a class="aha-bottomnav-item is-active" href="#"><span data-icon="home"></span>首页</a>
+                <span class="aha-bottomnav-center">
+                  <button class="aha-fab" type="button" aria-label="新建"><span data-icon="plus"></span></button>
+                </span>
+                <a class="aha-bottomnav-item" href="#"><span data-icon="folder"></span>文件</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

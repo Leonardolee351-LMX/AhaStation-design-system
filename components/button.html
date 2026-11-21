@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>按钮：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 按钮</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">按钮 <span class="docs-en">Button</span></h1>
+        <p class="docs-lede">触发一个行动。默认行动用蓝色实心胶囊按钮；橙色只用于警告。需要一个始终在场的新建入口时，使用 FAB。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">现场示例</h2>
+          <div class="docs-stage">
+            <div class="docs-row">
+              <button class="aha-btn aha-btn--primary aha-btn--pill" type="button"><span data-icon="upload"></span><span class="aha-btn-label">上传文件</span></button>
+              <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button"><span class="aha-btn-label">取消</span></button>
+              <button class="aha-btn aha-btn--ghost" type="button"><span data-icon="more"></span><span class="aha-btn-label">更多</span></button>
+              <button class="aha-btn aha-btn--danger" type="button"><span class="aha-btn-label">删除文件</span></button>
+              <button class="aha-btn aha-btn--warning" type="button"><span class="aha-btn-label">文件过大</span></button>
+              <button class="aha-fab" type="button" aria-label="新建"><span data-icon="plus"></span></button>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code><code class="docs-token" data-copy="--aha-radius-pill" title="点击复制">--aha-radius-pill</code><code class="docs-token" data-copy="--aha-button-height-md" title="点击复制">--aha-button-height-md</code><code class="docs-token" data-copy="--aha-glow" title="点击复制">--aha-glow</code></div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">尺寸</h2>
+          <div class="docs-stage">
+            <div class="docs-size-scale">
+              <div class="docs-size-item">
+                <button class="aha-btn aha-btn--primary aha-btn--sm aha-btn--pill" type="button"><span class="aha-btn-label">小号</span></button>
+                <p class="docs-size-caption"><strong>S · 高 32</strong>宽不少于 64</p>
+              </div>
+              <div class="docs-size-item">
+                <button class="aha-btn aha-btn--primary aha-btn--pill" type="button"><span class="aha-btn-label">中号</span></button>
+                <p class="docs-size-caption"><strong>M · 高 40</strong>默认</p>
+              </div>
+              <div class="docs-size-item">
+                <button class="aha-btn aha-btn--primary aha-btn--lg aha-btn--pill" type="button"><span class="aha-btn-label">大号</span></button>
+                <p class="docs-size-caption"><strong>L · 高 48</strong>主要行动</p>
+              </div>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-button-height-sm" title="点击复制">--aha-button-height-sm</code><code class="docs-token" data-copy="--aha-button-height-md" title="点击复制">--aha-button-height-md</code><code class="docs-token" data-copy="--aha-button-height-lg" title="点击复制">--aha-button-height-lg</code></div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">状态矩阵</h2>
+          <p class="docs-prose">悬停、焦点与按下在矩阵中用演示类写死，便于对照；真实交互请使用上方现场示例。</p>
+          <div style="overflow:auto;margin-top:var(--aha-space-16);">
+            <table class="docs-matrix">
+              <thead>
+                <tr>
+                  <th></th><th>默认</th><th>悬停</th><th>焦点</th><th>按下</th><th>禁用</th><th>加载</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class='docs-rowhead'>主要</td><td><button class="aha-btn aha-btn--primary aha-btn--pill" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--primary aha-btn--pill is-demo-hover" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--primary aha-btn--pill is-demo-focus" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--primary aha-btn--pill is-demo-active" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--primary aha-btn--pill" type="button" disabled><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--primary aha-btn--pill is-loading" type="button" aria-busy="true"><span class="aha-btn-label">上传</span><span class="aha-spinner aha-spinner--sm aha-btn-spin aha-spinner--on-dark"></span></button></td></tr><tr><td class='docs-rowhead'>次要</td><td><button class="aha-btn aha-btn--secondary" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--secondary is-demo-hover" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--secondary is-demo-focus" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--secondary is-demo-active" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--secondary" type="button" disabled><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--secondary is-loading" type="button" aria-busy="true"><span class="aha-btn-label">上传</span><span class="aha-spinner aha-spinner--sm aha-btn-spin"></span></button></td></tr><tr><td class='docs-rowhead'>幽灵</td><td><button class="aha-btn aha-btn--ghost" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--ghost is-demo-hover" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--ghost is-demo-focus" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--ghost is-demo-active" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--ghost" type="button" disabled><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--ghost is-loading" type="button" aria-busy="true"><span class="aha-btn-label">上传</span><span class="aha-spinner aha-spinner--sm aha-btn-spin"></span></button></td></tr><tr><td class='docs-rowhead'>危险</td><td><button class="aha-btn aha-btn--danger" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--danger is-demo-hover" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--danger is-demo-focus" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--danger is-demo-active" type="button"><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--danger" type="button" disabled><span class="aha-btn-label">上传</span></button></td><td><button class="aha-btn aha-btn--danger is-loading" type="button" aria-busy="true"><span class="aha-btn-label">上传</span><span class="aha-spinner aha-spinner--sm aha-btn-spin aha-spinner--on-dark"></span></button></td></tr><tr><td class='docs-rowhead'>警告（次要强调）</td><td><button class="aha-btn aha-btn--warning" type="button"><span class="aha-btn-label">注意</span></button></td><td><button class="aha-btn aha-btn--warning is-demo-hover" type="button"><span class="aha-btn-label">注意</span></button></td><td><button class="aha-btn aha-btn--warning is-demo-focus" type="button"><span class="aha-btn-label">注意</span></button></td><td><button class="aha-btn aha-btn--warning is-demo-active" type="button"><span class="aha-btn-label">注意</span></button></td><td><button class="aha-btn aha-btn--warning" type="button" disabled><span class="aha-btn-label">注意</span></button></td><td><button class="aha-btn aha-btn--warning is-loading" type="button" aria-busy="true"><span class="aha-btn-label">注意</span><span class="aha-spinner aha-spinner--sm aha-btn-spin"></span></button></td></tr><tr><td class='docs-rowhead'>图标</td><td><button class="aha-btn aha-btn--primary aha-btn--icon" type="button" aria-label="添加"><span data-icon="plus"></span></button></td><td><button class="aha-btn aha-btn--secondary aha-btn--icon is-demo-hover" type="button" aria-label="添加"><span data-icon="plus"></span></button></td><td><button class="aha-btn aha-btn--ghost aha-btn--icon is-demo-focus" type="button" aria-label="添加"><span data-icon="plus"></span></button></td><td><button class="aha-btn aha-btn--primary aha-btn--icon is-demo-active" type="button" aria-label="添加"><span data-icon="plus"></span></button></td><td><button class="aha-btn aha-btn--primary aha-btn--icon" type="button" disabled aria-label="添加"><span data-icon="plus"></span></button></td><td><button class="aha-btn aha-btn--primary aha-btn--icon is-loading" type="button" aria-busy="true" aria-label="添加"><span data-icon="plus"></span><span class="aha-spinner aha-spinner--sm aha-btn-spin aha-spinner--on-dark"></span></button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

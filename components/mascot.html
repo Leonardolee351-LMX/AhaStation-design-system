@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IP 形象（占位）：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / IP 形象</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+        <h1 class="docs-h1">IP 形象 <span class="docs-en">Placeholder mascot</span></h1>
+        <p class="docs-lede">发光软团，两只椭圆眼睛。这是占位，待正式 IP 更新后再替换。它出现在洞察卡片和对话输入的旁边，场地是柔和的蓝光。</p>
+
+        <section class="docs-section">
+          <div class="aha-lumen-field">
+            <div class="docs-grid-2" style="align-items:center;">
+              <div class="aha-mascot-wrap">
+                <div data-mascot></div>
+                <p class="aha-mascot-caption">IP 形象（占位）</p>
+              </div>
+              <div class="docs-stack">
+                <article class="aha-card aha-card--insight">
+                  <div>
+                    <p class="aha-mascot-caption">洞察（占位）</p>
+                    <h3 class="aha-card-title">下午三点还有一场项目室会议</h3>
+                    <p class="aha-card-body">纪要文件夹已经准备好。需要的话，我可以在会后帮你同步看板。</p>
+                  </div>
+                </article>
+                <div class="aha-composer">
+                  <input class="aha-input" type="text" placeholder="问一问项目室里的事" aria-label="提问">
+                  <button class="aha-btn aha-btn--primary aha-btn--icon" type="button" aria-label="发送" aria-label="发送"><span data-icon="send"></span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-midnight" title="点击复制">--aha-midnight</code><code class="docs-token" data-copy="--aha-azure" title="点击复制">--aha-azure</code><code class="docs-token" data-copy="--aha-aqua" title="点击复制">--aha-aqua</code><code class="docs-token" data-copy="--aha-gradient-field" title="点击复制">--aha-gradient-field</code></div>
+          <p class="docs-note">SVG 由 docs.js 注入，颜色全部取自光谱 token。替换时保留这一占位标注，直到正式形象到位。</p>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

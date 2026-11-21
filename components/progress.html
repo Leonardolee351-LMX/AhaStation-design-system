@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>进度：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 进度</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">进度 <span class="docs-en">Progress</span></h1>
+        <p class="docs-lede">显示一项已开始的过程，例如读取即将上传的文件。不确定何时结束时，改用加载指示。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage docs-stack">
+            <div>
+              <div class="aha-progress-label"><span>会议纪要.pdf</span><span>64%</span></div>
+              <div class="aha-progress" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100"><span style="transform: scaleX(0.64)"></span></div>
+            </div>
+            <div>
+              <div class="aha-progress-label"><span>带光谱的进度</span><span>40%</span></div>
+              <div class="aha-progress aha-progress--soft" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"><span style="transform: scaleX(0.4)"></span></div>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code><code class="docs-token" data-copy="--aha-aqua" title="点击复制">--aha-aqua</code><code class="docs-token" data-copy="--aha-duration-slow" title="点击复制">--aha-duration-slow</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

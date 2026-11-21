@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>底栏：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 底栏</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">底栏 <span class="docs-en">Bottom navigation</span></h1>
+        <p class="docs-lede">移动或窄窗口里的主要导航。中间的 FAB 用于新建，略微浮起，并带着主色光晕。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage docs-stage--canvas" style="display:flex; justify-content:center;">
+            <nav class="aha-bottomnav" style="width: min(24rem, 100%);" aria-label="主要导航">
+              <a class="aha-bottomnav-item is-active" href="#"><span data-icon="home"></span><span>首页</span></a>
+              <a class="aha-bottomnav-item" href="#"><span data-icon="calendar"></span><span>会议</span></a>
+              <span class="aha-bottomnav-center">
+                <button class="aha-fab" type="button" aria-label="新建"><span data-icon="plus"></span></button>
+              </span>
+              <a class="aha-bottomnav-item" href="#"><span data-icon="kanban"></span><span>看板</span></a>
+              <a class="aha-bottomnav-item" href="#"><span data-icon="folder"></span><span>文件</span></a>
+            </nav>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-fab-size" title="点击复制">--aha-fab-size</code><code class="docs-token" data-copy="--aha-shadow-glow" title="点击复制">--aha-shadow-glow</code><code class="docs-token" data-copy="--aha-radius-xl" title="点击复制">--aha-radius-xl</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

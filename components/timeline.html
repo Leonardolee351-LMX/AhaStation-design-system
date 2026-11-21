@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>时间线：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 时间线</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">时间线 <span class="docs-en">Timeline</span></h1>
+        <p class="docs-lede">按发生顺序呈现项目室里的事件。已完成项用蓝色勾选，未到或次要项保持更淡的语气。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage" style="max-width: 28rem;">
+            <ol class="aha-timeline">
+              <li class="aha-timeline-item">
+                <span class="aha-timeline-mark"><span data-icon="check"></span></span>
+                <div>
+                  <h3 class="aha-card-title">上传会议纪要</h3>
+                  <p class="docs-type-caption">今天 16:20，视觉升级</p>
+                </div>
+              </li>
+              <li class="aha-timeline-item">
+                <span class="aha-timeline-mark"><span data-icon="check"></span></span>
+                <div>
+                  <h3 class="aha-card-title">确认字体方案</h3>
+                  <p class="docs-type-caption">今天 18:00</p>
+                </div>
+              </li>
+              <li class="aha-timeline-item is-muted">
+                <span class="aha-timeline-mark"><span data-icon="clock"></span></span>
+                <div>
+                  <h3 class="aha-card-title">同步看板待办</h3>
+                  <p class="docs-type-caption">明天</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary-soft" title="点击复制">--aha-color-primary-soft</code><code class="docs-token" data-copy="--aha-line-soft" title="点击复制">--aha-line-soft</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

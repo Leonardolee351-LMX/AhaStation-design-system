@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>提示：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 提示</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">提示 <span class="docs-en">Tooltip</span></h1>
+        <p class="docs-lede">为图标按钮补充一句说明。内容必须很短，不能承担帮助文档的职责。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage" style="min-height: 8rem; display:flex; align-items:flex-end;">
+            <span class="aha-tip">
+              <button class="aha-btn aha-btn--secondary aha-btn--icon" type="button" aria-label="分享项目室"><span data-icon="share"></span></button>
+              <span class="aha-tip-bubble" role="tooltip">分享项目室</span>
+            </span>
+          </div>
+          <p class="docs-note">将指针移到按钮上，或用键盘聚焦，即可看到提示。</p>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-ink" title="点击复制">--aha-ink</code><code class="docs-token" data-copy="--aha-radius-sm" title="点击复制">--aha-radius-sm</code><code class="docs-token" data-copy="--aha-caption-size" title="点击复制">--aha-caption-size</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

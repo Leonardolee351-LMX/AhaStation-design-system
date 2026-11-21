@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>概述：AhaStation 设计系统</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">设计系统 / 概述</p>
+      </header>
+      <main id="content" class="docs-main docs-main--wide">
+
+        <section class="docs-hero docs-hero--blast">
+          <div class="aha-pixel-blast" data-pixel-blast aria-hidden="true"></div>
+          <h1>AhaStation<br>设计系统</h1>
+          <p>给项目室、会议与看板使用的可视化组件库。改动从 css/tokens.css 开始，整站会一起更新。</p>
+          <a class="aha-btn aha-btn--secondary aha-btn--pill" href="foundations/colors.html">从颜色开始</a>
+        </section>
+
+        <section>
+          <h2 class="docs-h2">原则</h2>
+          <div class="docs-principles" style="margin-top: var(--aha-space-16);">
+            <article class="docs-principle">
+              <h2>蓝色与光</h2>
+              <p>主色是 <code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code>（#2563EB）。蓝绿亮色只作提醒，不进入主按钮。欢迎页首页用品牌蓝的 Pixel Blast 像素云作为背景；其他页面的光场仍是缓慢浮动的光团和圆形晶格。光谱是午夜到水蓝到白；靛紫与酒红只用于图表，不和蓝色做品牌渐变。</p>
+            </article>
+            <article class="docs-principle">
+              <h2>橙色的位置</h2>
+              <p>橙色只用于警告或次要强调，从不做主按钮或默认行动。</p>
+            </article>
+            <article class="docs-principle">
+              <h2>两种字体，各司其职</h2>
+              <p>标题使用 Plus Jakarta Sans，正文、标签与界面使用 Inter。颜色按层级走：大标题接近墨色，正文用近黑的灰，说明用浅灰。</p>
+            </article>
+            <article class="docs-principle">
+              <h2>先看，再在代码里改</h2>
+              <p>本站是可视化对照。Token 写在 <code class="docs-token" data-copy="css/tokens.css" title="点击复制">css/tokens.css</code>：原始值、语义名、偶尔的组件映射。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">组件一览</h2>
+          <p class="docs-prose">按真实界面碎片来排，而不是表格。更完整的状态矩阵在各组件页。</p>
+
+          <div class="docs-kit" style="margin-top: var(--aha-space-24);">
+            <svg class="docs-kit-lines" viewBox="0 0 1000 760" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M250 90C360 90 360 130 430 150" />
+              <path d="M250 360C360 360 400 220 470 250" />
+              <path d="M720 80C700 160 700 180 740 210" />
+              <path d="M300 470C420 470 480 520 560 540" />
+              <path d="M620 480C700 500 740 520 790 560" />
+              <path d="M340 680C430 680 470 620 530 600" />
+            </svg>
+            <div class="docs-kit-stage">
+
+              <div class="docs-kit-col docs-kit-col--left">
+                <div class="docs-kit-card docs-kit-search">
+                <div class="aha-search">
+                  <span data-icon="search"></span>
+                  <input class="aha-input" type="search" placeholder="搜索项目室、会议">
+                </div>
+                <button class="docs-kit-row" type="button">
+                  <span class="docs-kit-lead docs-kit-lead--folder"><span data-icon="folder"></span></span>
+                  品牌升级
+                </button>
+                <button class="docs-kit-row is-selected" type="button">
+                  <span class="docs-kit-lead docs-kit-lead--meeting"><span data-icon="meeting"></span></span>
+                  项目讨论
+                  <span class="docs-kit-check" data-icon="check"></span>
+                </button>
+                <button class="docs-kit-row" type="button">
+                  <span class="docs-kit-lead docs-kit-lead--file"><span data-icon="file"></span></span>
+                  周会纪要
+                </button>
+                <button class="docs-kit-row" type="button">
+                  <span class="docs-kit-lead docs-kit-lead--kanban"><span data-icon="kanban"></span></span>
+                  看板备份
+                </button>
+                <button class="aha-btn aha-btn--primary aha-btn--pill" type="button"><span data-icon="plus"></span><span class="aha-btn-label">打开项目室</span></button>
+              </div>
+                <div class="docs-kit-card docs-kit-card--pill docs-kit-filters">
+                <button class="docs-kit-seg" type="button" aria-pressed="false">
+                  项目筛选
+                  <span class="docs-kit-count">2</span>
+                </button>
+                <button class="docs-kit-seg is-active" type="button" aria-pressed="true">时间筛选</button>
+              </div>
+                <div class="docs-kit-card docs-kit-card--pill docs-kit-event">
+                <div class="docs-kit-event-meta">
+                  <strong>会议名称</strong>
+                  <span>品牌升级周会</span>
+                </div>
+                <span class="docs-kit-event-split"></span>
+                <div class="docs-kit-event-meta">
+                  <strong>开始时间</strong>
+                  <span>11 月 17 日</span>
+                </div>
+                <span data-icon="calendar"></span>
+                <label class="aha-switch" style="margin-left:auto">
+                  <span class="aha-switch-label" style="margin-right: var(--aha-space-8);">开启</span>
+                  <input type="checkbox" checked>
+                  <span class="aha-switch-ui"></span>
+                </label>
+              </div>
+                <div class="docs-kit-card docs-kit-editor">
+                <textarea class="aha-textarea" placeholder="写一条会议纪要…"></textarea>
+                <div class="docs-kit-toolbar">
+                  <button class="docs-kit-tool" type="button" aria-label="加粗">B</button>
+                  <button class="docs-kit-tool" type="button" aria-label="斜体" style="font-style:italic">I</button>
+                  <button class="docs-kit-tool" type="button" aria-label="下划线" style="text-decoration:underline">U</button>
+                  <button class="docs-kit-tool" type="button" aria-label="列表"><span data-icon="list" data-icon-class="aha-icon--sm"></span></button>
+                </div>
+              </div>
+                <div class="docs-kit-card docs-kit-card--pill docs-kit-code">
+                <span class="docs-kit-lead docs-kit-lead--meeting"><span data-icon="meeting"></span></span>
+                <div class="docs-kit-event-meta" style="margin-left: var(--aha-space-8); flex:1">
+                  <strong>会议号</strong>
+                  <span>AHA 2042 301</span>
+                </div>
+                <button class="aha-btn aha-btn--primary aha-btn--icon aha-btn--sm" type="button" aria-label="复制会议号"><span data-icon="copy"></span></button>
+              </div>
+              </div>
+
+              <div class="docs-kit-col docs-kit-col--mid">
+                <div class="docs-kit-card docs-kit-range">
+                <div class="docs-kit-tabs">
+                  <button class="docs-kit-tab is-active" type="button">时间筛选</button>
+                  <button class="docs-kit-tab" type="button">类型筛选<span class="docs-kit-count">2</span></button>
+                  <button class="docs-kit-tab" type="button">成员筛选</button>
+                </div>
+                <div class="aha-range-dual aha-range-dual--knob" data-range-min="1" data-range-max="6">
+                  <div class="aha-range-dual-track"><div class="aha-range-dual-fill"></div></div>
+                  <input type="range" min="1" max="12" value="2" aria-label="开始月份">
+                  <input type="range" min="1" max="12" value="8" aria-label="结束月份">
+                </div>
+                <div class="docs-kit-values">
+                  <div class="docs-kit-value"><span>从</span><strong>2 月</strong></div>
+                  <div class="docs-kit-value"><span>到</span><strong>8 月</strong></div>
+                </div>
+                <div class="docs-kit-actions">
+                  <button class="aha-btn aha-btn--primary aha-btn--pill" type="button">应用</button>
+                  <button class="aha-btn aha-btn--secondary aha-btn--pill" type="button">取消</button>
+                </div>
+              </div>
+                <button class="docs-kit-fav" type="button" aria-label="收藏 10">
+                <span data-icon="heart"></span>
+                <span class="docs-kit-count">10</span>
+              </button>
+                <div class="docs-kit-card docs-kit-apps">
+                <div class="aha-search">
+                  <span data-icon="search"></span>
+                  <input class="aha-input" type="search" placeholder="搜索工作流…">
+                </div>
+                <label class="aha-choice" style="width:100%;padding: var(--aha-space-8) var(--aha-space-8);">
+                  <input type="radio" name="kit-app">
+                  <span class="aha-radio-ui"></span>
+                  项目室
+                </label>
+                <label class="aha-choice" style="width:100%;padding: var(--aha-space-8) var(--aha-space-8);background:var(--aha-color-primary-soft);border-radius:var(--aha-radius-md)">
+                  <input type="radio" name="kit-app" checked>
+                  <span class="aha-radio-ui"></span>
+                  会议纪要
+                </label>
+                <label class="aha-choice" style="width:100%;padding: var(--aha-space-8) var(--aha-space-8);">
+                  <input type="radio" name="kit-app">
+                  <span class="aha-radio-ui"></span>
+                  看板
+                </label>
+                <label class="aha-choice" style="width:100%;padding: var(--aha-space-8) var(--aha-space-8);">
+                  <input type="radio" name="kit-app">
+                  <span class="aha-radio-ui"></span>
+                  文件库
+                </label>
+                <button class="docs-kit-play" type="button" aria-label="打开"><span data-icon="play"></span></button>
+              </div>
+              </div>
+
+              <div class="docs-kit-col docs-kit-col--right">
+                <div class="docs-kit-card docs-kit-card--pill docs-kit-name">
+                <label class="aha-field-label" style="margin-right: var(--aha-space-8);">会议名称</label>
+                <span class="docs-kit-caret">品牌周会</span>
+              </div>
+                <div class="docs-kit-card docs-kit-join">
+                <div class="aha-field">
+                  <div class="docs-kit-input-bubble">
+                    <input class="aha-input" type="text" value="项目室 · 品牌升级" aria-label="项目室名称">
+                    <button class="aha-btn aha-btn--ghost aha-btn--icon aha-btn--sm" type="button" aria-label="更多"><span data-icon="chevronDown"></span></button>
+                  </div>
+                </div>
+                <div class="aha-field">
+                  <div class="docs-kit-affix">
+                    <span data-icon="lock"></span>
+                    <input class="aha-input" type="password" value="••••••••" aria-label="访问码" readonly>
+                    <button class="aha-btn aha-btn--ghost aha-btn--icon aha-btn--sm" type="button" data-kit-eye aria-label="显示访问码"><span data-icon="eye"></span></button>
+                  </div>
+                </div>
+                <label class="aha-choice" style="margin: var(--aha-space-16) 0;">
+                  <input type="checkbox" checked>
+                  <span class="aha-check-ui"><span data-icon="check"></span></span>
+                  记住这个项目室
+                </label>
+                <button class="aha-btn aha-btn--primary aha-btn--pill" type="button" style="width:100%">进入</button>
+              </div>
+                <div class="docs-kit-card docs-kit-upload">
+                <div class="docs-kit-upload-mark"><span data-icon="upload"></span></div>
+                <h3>上传文件</h3>
+                <p>视频建议 1080p、MP4 格式，单个文件不超过 30 MB。</p>
+                <button class="aha-btn aha-btn--primary aha-btn--pill" type="button">上传</button>
+              </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="docs-field" style="margin-top: var(--aha-space-32);">
+            <span class="aha-field-veil" aria-hidden="true"></span>
+            <div class="docs-field-cards">
+
+              <article class="docs-metric docs-metric--income">
+                <div class="docs-metric-head">
+                  <span class="aha-icon-wrap"><span data-icon="meeting"></span></span>
+                  本周会议
+                  <button class="docs-metric-more" type="button" aria-label="查看详情"><span data-icon="chevronRight"></span></button>
+                </div>
+                <div class="docs-metric-value">
+                  12 场
+                  <span class="docs-metric-delta is-up">+3 <span class="docs-metric-vs">较上周</span></span>
+                </div>
+                <div class="docs-metric-bar-meta" style="margin-top: var(--aha-space-20);">
+                  <span>50%</span>
+                  <span>22%</span>
+                </div>
+                <div class="docs-metric-bar">
+                  <div class="docs-metric-bar-track"></div>
+                  <span class="docs-metric-chip">项目室 6 场</span>
+                  <div class="docs-metric-bar-track is-indigo"></div>
+                </div>
+                <div class="docs-metric-legend">
+                  <span><i style="background:var(--aha-color-primary)"></i>项目室</span>
+                  <span><i style="background:var(--aha-data-ink)"></i>一对一</span>
+                  <span><i style="background:var(--aha-data-indigo)"></i>复盘</span>
+                </div>
+              </article>
+
+              <article class="docs-metric docs-metric--saving">
+                <div class="docs-metric-head">
+                  <span class="aha-icon-wrap"><span data-icon="checkCircle"></span></span>
+                  已完成待办
+                  <button class="docs-metric-more" type="button" aria-label="查看详情"><span data-icon="chevronRight"></span></button>
+                </div>
+                <div class="docs-metric-value">
+                  24 项
+                  <span class="docs-metric-delta is-up">+16.6% <span class="docs-metric-vs">较上周</span></span>
+                </div>
+                <div class="docs-dots" aria-hidden="true">
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-a"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-b"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-c"></span>
+                  <span class="is-c"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                  <span class="is-empty"></span>
+                </div>
+                <div class="docs-metric-legend">
+                  <span><i style="background:var(--aha-color-primary)"></i>设计</span>
+                  <span><i style="background:var(--aha-data-rose)"></i>讨论</span>
+                  <span><i style="background:var(--aha-data-indigo)"></i>实现</span>
+                </div>
+              </article>
+
+              <article class="docs-metric docs-metric--trend">
+                <div class="docs-metric-head">
+                  <span class="aha-icon-wrap"><span data-icon="file"></span></span>
+                  项目文件
+                  <button class="docs-metric-more" type="button" aria-label="查看详情"><span data-icon="chevronRight"></span></button>
+                </div>
+                <div class="docs-metric-value">
+                  128 份
+                  <span class="docs-metric-delta is-down">-5.3% <span class="docs-metric-vs">较上周</span></span>
+                </div>
+                <svg class="docs-line-chart" viewBox="0 0 360 96" role="img" aria-label="本周文件数量变化">
+                  <path d="M16 70 C 40 66, 56 48, 72 52 S 104 78, 120 60 S 152 28, 168 36 S 200 70, 216 58 S 248 40, 264 48 S 300 62, 344 44" />
+                  <circle cx="16" cy="70" r="4" />
+                  <circle cx="72" cy="52" r="4" />
+                  <circle cx="120" cy="60" r="4" />
+                  <circle cx="168" cy="36" r="4" />
+                  <circle cx="216" cy="58" r="4" />
+                  <circle cx="264" cy="48" r="4" />
+                  <circle cx="344" cy="44" r="4" />
+                  <text class="docs-axis" x="16" y="92" text-anchor="middle">周一</text>
+                  <text class="docs-axis" x="72" y="92" text-anchor="middle">周二</text>
+                  <text class="docs-axis" x="120" y="92" text-anchor="middle">周三</text>
+                  <text class="docs-axis" x="168" y="92" text-anchor="middle">周四</text>
+                  <text class="docs-axis" x="216" y="92" text-anchor="middle">周五</text>
+                  <text class="docs-axis" x="264" y="92" text-anchor="middle">周六</text>
+                  <text class="docs-axis" x="344" y="92" text-anchor="middle">周日</text>
+                </svg>
+              </article>
+
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="js/nav.js"></script>
+  <script src="js/pixel-blast.js"></script>
+  <script src="js/docs.js"></script>
+</body>
+</html>

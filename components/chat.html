@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>对话：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 对话</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">对话 <span class="docs-en">Chat</span></h1>
+        <p class="docs-lede">用于项目室里的短沟通。对方气泡偏中性，自己的气泡用主色。输入条保持胶囊形，贴近底部。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage" style="max-width: 28rem;">
+            <div class="aha-chat">
+              <div class="aha-bubble aha-bubble--in">把参考图放到「视觉升级」了，你看一下封面光效。</div>
+              <div class="aha-bubble aha-bubble--out">收到，我晚上会把字体决定写进纪要。</div>
+              <div class="aha-bubble aha-bubble--in">会议还是明天下午三点，在项目室里开。</div>
+              <div class="aha-composer">
+                <button class="aha-btn aha-btn--ghost aha-btn--sm aha-btn--icon" type="button" aria-label="附件"><span data-icon="paperclip"></span></button>
+                <input class="aha-input" type="text" placeholder="写一条回复" aria-label="回复">
+                <button class="aha-btn aha-btn--primary aha-btn--icon" type="button" aria-label="发送" aria-label="发送"><span data-icon="send"></span></button>
+              </div>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code><code class="docs-token" data-copy="--aha-neutral-100" title="点击复制">--aha-neutral-100</code><code class="docs-token" data-copy="--aha-radius-lg" title="点击复制">--aha-radius-lg</code><code class="docs-token" data-copy="--aha-radius-pill" title="点击复制">--aha-radius-pill</code></div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">输入聊天框 <span class="docs-en">Composer</span></h2>
+          <p class="docs-lede">独立的对话输入组件。胶囊形输入条，左侧可附文件，右侧发送。掌机在主页拖到键盘后，只保留这一条并自动聚焦，不再同时显示语音蓝圈。</p>
+          <div class="docs-stage" style="max-width: 28rem;">
+            <div class="aha-composer">
+              <button class="aha-btn aha-btn--ghost aha-btn--sm aha-btn--icon" type="button" aria-label="附件"><span data-icon="paperclip"></span></button>
+              <input class="aha-input" type="text" placeholder="和 Aha 说…" aria-label="对话输入">
+              <button class="aha-btn aha-btn--primary aha-btn--icon" type="button" aria-label="发送"><span data-icon="send"></span></button>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token">.aha-composer</code><code class="docs-token" data-copy="--aha-radius-pill" title="点击复制">--aha-radius-pill</code></div>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

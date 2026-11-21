@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>空状态：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">组合组件 / 空状态</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">空状态 <span class="docs-en">Empty state</span></h1>
+        <p class="docs-lede">一个区域还没有内容时使用。说明下一步，并给出一个清晰的主行动。</p>
+
+        <section class="docs-section">
+          <div class="docs-stage">
+            <div class="aha-empty">
+              <div class="aha-upload-orb" style="margin: 0 auto var(--aha-space-16);"><span data-icon="folder"></span></div>
+              <h3 class="aha-card-title">这个项目室还是空的</h3>
+              <p>上传第一份文件，或把已有的会议纪要移过来。</p>
+              <div style="margin-top: var(--aha-space-20);"><button class="aha-btn aha-btn--primary aha-btn--pill" type="button"><span data-icon="upload"></span><span class="aha-btn-label">上传文件</span></button></div>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-muted" title="点击复制">--aha-muted</code><code class="docs-token" data-copy="--aha-color-primary" title="点击复制">--aha-color-primary</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

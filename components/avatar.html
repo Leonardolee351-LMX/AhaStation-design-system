@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>头像：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">原子组件 / 头像</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">头像 <span class="docs-en">Avatar</span></h1>
+        <p class="docs-lede">代表一位参与项目室的人。没有照片时使用名字缩写，不要用表情符号。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">尺寸</h2>
+          <p class="docs-prose">头像始终是正方形。S、M、L 三档对应固定的 N×N，不随容器缩放。</p>
+          <div class="docs-stage">
+            <div class="docs-size-scale">
+              <div class="docs-size-item">
+                <span class="aha-avatar aha-avatar--sm" aria-label="林">林</span>
+                <p class="docs-size-caption"><strong>S · 28×28</strong>列表、评论、密集成员行</p>
+              </div>
+              <div class="docs-size-item">
+                <span class="aha-avatar" aria-label="周">周</span>
+                <p class="docs-size-caption"><strong>M · 40×40</strong>默认，顶栏与消息</p>
+              </div>
+              <div class="docs-size-item">
+                <span class="aha-avatar aha-avatar--lg" aria-label="陈">陈</span>
+                <p class="docs-size-caption"><strong>L · 56×56</strong>资料卡、介绍</p>
+              </div>
+            </div>
+          </div>
+          <div class="docs-annote">
+            <code class="docs-token" data-copy="--aha-avatar-sm" title="点击复制">--aha-avatar-sm</code>
+            <code class="docs-token" data-copy="--aha-avatar-md" title="点击复制">--aha-avatar-md</code>
+            <code class="docs-token" data-copy="--aha-avatar-lg" title="点击复制">--aha-avatar-lg</code>
+          </div>
+        </section>
+        <section class="docs-section">
+          <h2 class="docs-h2">组合</h2>
+          <div class="docs-stage">
+            <div class="docs-row">
+              <span class="aha-avatar-group" aria-label="项目成员">
+                <span class="aha-avatar" aria-hidden="true">林</span>
+                <span class="aha-avatar" aria-hidden="true">周</span>
+                <span class="aha-avatar" aria-hidden="true">陈</span>
+              </span>
+            </div>
+          </div>
+          <div class="docs-annote"><code class="docs-token" data-copy="--aha-color-primary-soft" title="点击复制">--aha-color-primary-soft</code><code class="docs-token" data-copy="--aha-radius-pill" title="点击复制">--aha-radius-pill</code></div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>

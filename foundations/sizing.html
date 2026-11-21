@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-root="../">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>尺寸与自适应：AhaStation 设计系统</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/docs.css">
+</head>
+<body>
+  <a class="aha-skip" href="#content">跳到正文</a>
+  <div class="docs-shell">
+    <aside class="docs-sidebar" id="docs-sidebar"></aside>
+    <div class="docs-main-wrap">
+      <header class="docs-topbar">
+        <button type="button" class="docs-menu" aria-controls="docs-sidebar" aria-expanded="false" aria-label="打开导航"><span data-icon="menu"></span></button>
+        <p class="docs-crumb">基础 / 尺寸与自适应</p>
+      </header>
+      <main id="content" class="docs-main">
+        <h1 class="docs-h1">尺寸与自适应 <span class="docs-en">Sizing</span></h1>
+        <p class="docs-lede">高度用固定的 S / M / L token，宽度随容器伸展，但每个组件都有最小和最大尺寸，避免在窄屏上被压扁，或在宽屏上拉得过长。</p>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">原则</h2>
+          <div class="docs-grid-3">
+            <div class="docs-callout">
+              <strong>高度跟尺寸档走</strong>
+              <p>按钮、输入、头像用 S / M / L 的固定像素，不随屏幕缩放。这样触控区域和文字对齐始终稳定。</p>
+            </div>
+            <div class="docs-callout">
+              <strong>宽度可流动</strong>
+              <p>表单、滑杆、卡片、对话框默认 <code>width: 100%</code>，吃满父级，但受 min / max 约束。</p>
+            </div>
+            <div class="docs-callout">
+              <strong>到断点再换布局</strong>
+              <p>不要把组件本身拉成不规则比例。需要适应更小屏幕时，改排列（单列、折叠侧栏），而不是压缩控件高度。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">断点</h2>
+          <p class="docs-prose">文档站与产品界面共用同一套宽度。布局在这些点切换，组件尺寸档本身不变。</p>
+          <div style="overflow:auto;margin-top:var(--aha-space-16);">
+            <table class="docs-table">
+              <thead>
+                <tr><th>名称</th><th>Token</th><th>宽度</th><th>典型用途</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>SM</td><td><code class="docs-token" data-copy="--aha-bp-sm">--aha-bp-sm</code></td><td>640px</td><td>单列，底栏导航</td></tr>
+                <tr><td>MD</td><td><code class="docs-token" data-copy="--aha-bp-md">--aha-bp-md</code></td><td>768px</td><td>两列卡片，侧栏改为抽屉</td></tr>
+                <tr><td>LG</td><td><code class="docs-token" data-copy="--aha-bp-lg">--aha-bp-lg</code></td><td>1024px</td><td>侧栏 + 主栏</td></tr>
+                <tr><td>XL</td><td><code class="docs-token" data-copy="--aha-bp-xl">--aha-bp-xl</code></td><td>1280px</td><td>完整工作台，组件一览拼贴</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="docs-section">
+          <h2 class="docs-h2">组件最小 / 最大尺寸</h2>
+          <p class="docs-prose">正方形组件（头像、图标按钮、FAB）宽高等于同一档的 N×N。其余组件高度固定、宽度设上下限。</p>
+          <div style="overflow:auto;margin-top:var(--aha-space-16);">
+            <table class="docs-table">
+              <thead>
+                <tr><th>组件</th><th>最小</th><th>默认 / 中档</th><th>最大</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>头像 S / M / L</td><td>28×28</td><td>40×40</td><td>56×56</td></tr>
+                <tr><td>按钮 S / M / L</td><td>高 32，宽 ≥ 64</td><td>高 40，宽 ≥ 64</td><td>高 48；图标按钮等于高度的正方形</td></tr>
+                <tr><td>输入 / 选择器</td><td>宽 160，高 40</td><td>宽 100%</td><td>不超过父级</td></tr>
+                <tr><td>滑杆</td><td>宽 160，高 32（大圆点 40）</td><td>宽 100%</td><td>不超过父级</td></tr>
+                <tr><td>卡片</td><td>宽 240</td><td>随栏宽</td><td>不超过父级</td></tr>
+                <tr><td>对话框</td><td>宽 320</td><td>随内容</td><td>宽 640</td></tr>
+                <tr><td>吐司</td><td>宽 280</td><td>随文案</td><td>宽 420</td></tr>
+                <tr><td>提示</td><td>—</td><td>随文案</td><td>宽 240</td></tr>
+                <tr><td>侧栏</td><td>宽 240</td><td>宽 272</td><td>宽 320</td></tr>
+                <tr><td>上传区</td><td>高 160</td><td>随内容</td><td>不超过父级</td></tr>
+                <tr><td>FAB</td><td>—</td><td>56×56</td><td>56×56</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="docs-annote">
+            <code class="docs-token" data-copy="--aha-avatar-sm" title="点击复制">--aha-avatar-sm</code>
+            <code class="docs-token" data-copy="--aha-avatar-md" title="点击复制">--aha-avatar-md</code>
+            <code class="docs-token" data-copy="--aha-avatar-lg" title="点击复制">--aha-avatar-lg</code>
+            <code class="docs-token" data-copy="--aha-button-height-md" title="点击复制">--aha-button-height-md</code>
+            <code class="docs-token" data-copy="--aha-input-min" title="点击复制">--aha-input-min</code>
+            <code class="docs-token" data-copy="--aha-card-min" title="点击复制">--aha-card-min</code>
+            <code class="docs-token" data-copy="--aha-modal-max" title="点击复制">--aha-modal-max</code>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <div class="docs-backdrop" id="docs-backdrop"></div>
+  <script src="../js/nav.js"></script>
+  <script src="../js/docs.js"></script>
+</body>
+</html>
