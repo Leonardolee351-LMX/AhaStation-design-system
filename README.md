@@ -6,9 +6,10 @@
 
 ## 如何打开
 
-- **Windows：** 双击 `start.cmd`。脚本会在 `5174` 端口打开本站，并在窗口里打印局域网地址。
-- **iPhone / iPad：** 先在 Windows 上双击 `start.cmd`，手机和电脑连同一个 Wi-Fi，再用 Safari 打开窗口里打印的 `http://192.168.…:5174/`。iOS 不能直接运行 `start.cmd`。页面已按手机宽度收起侧栏，点左上角菜单即可切换「基础 / IP设计（施工中）」等页面。
-- 只在这台 Windows 上预览、不给手机看时，也可以直接双击 `index.html`。Google Fonts 需要联网；字体未载入时会回退到苹方、雅黑或 system-ui。
+- **Windows：** 双击 `start.cmd`。浏览器打开 [http://localhost:5174/](http://localhost:5174/)。
+- **macOS：** 双击 `start.command`。若系统提示无法打开，在「系统设置 → 隐私与安全性」中允许，或在终端执行 `chmod +x start.command && ./start.command`。
+
+没有 Python 时，脚本会改为直接打开 `index.html`。Google Fonts 需要联网；字体未载入时会回退到苹方、雅黑或 system-ui。
 
 也可以手动启动：
 

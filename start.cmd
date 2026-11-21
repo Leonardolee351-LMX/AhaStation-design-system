@@ -11,15 +11,9 @@ echo.
 echo AhaStation 设计系统
 echo 本机浏览器: http://localhost:%PORT%/
 echo.
-echo iPhone / iPad：与这台电脑连接同一个 Wi-Fi，用 Safari 打开下面任一地址。
-for /f "tokens=2 delims=:" %%A in ('ipconfig ^| findstr /c:"IPv4"') do (
-  for /f "tokens=* delims= " %%B in ("%%A") do echo   http://%%B:%PORT%/
-)
-echo.
 
 if not defined PY (
   echo 未检测到 Python。已直接用浏览器打开 index.html。
-  echo 这种方式只能在这台 Windows 上查看，iPhone 打不开。
   start "" "%~dp0index.html"
   pause
   exit /b 0
